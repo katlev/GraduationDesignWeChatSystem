@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "外文原文报告上传",
+  "usingComponents": {
+    "van-icon":"/static/vant/dist/icon/index"
+  }
+}

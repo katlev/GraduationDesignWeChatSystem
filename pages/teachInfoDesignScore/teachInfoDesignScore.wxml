@@ -1,0 +1,14 @@
+<!--pages/teachInfoDesignScore/teachInfoDesignScore.wxml-->
+<view>
+  <view>
+    <van-cell wx:for="{{stuList}}" wx:key="index" is-link center link-type="navigateTo" url="/pages/teachInfoDesignScoreInput/teachInfoDesignScoreInput?userId={{item.userId}}" id="{{item.titleId}}" bindtap="clickCell">
+      <view slot="title" class="flex">
+        <van-image round width="80rpx" height="80rpx" fit="cover" src="{{item.avatar? item.avatar : '/static/images/missing-face.png'}}"></van-image>
+        <view class="flexMiddle content">
+          <view>{{item.usernum}}{{item.username}}</view>
+          <text class="describleInfo">{{item.titleName}}<text class="check" wx:if="{{item.defenceScore == null}}">(待录入)</text><text class="check" wx:else>(已录入)</text></text>
+        </view>
+      </view>
+    </van-cell>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "开题记录",
+  "usingComponents": {
+    "van-cell-group":"/static/vant/dist/cell-group/index",
+    "van-cell":"/static/vant/dist/cell/index",
+    "van-empty":"/static/vant/dist/empty/index"
+  }
+}

@@ -1,0 +1,33 @@
+<!--pages/stuDocUploadGuidance/stuDocUploadGuidance.wxml-->
+<import src="/template/uploadFile/uploadFile.wxml" />
+<view>
+    <!-- 卡片头部 -->
+    <template is="uploadFile" data="{{perInfo}}" />
+    <!-- 文件内容上传 -->
+    <view class="Card">
+        <view class="fileHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            <view class="head">指导记录添加</view>
+            <button class="fileBtn" bindtap="addGuidance">添加</button>
+        </view>
+        <view class="fileContent">
+            <!-- 指导记录 -->
+            <view wx:for="{{guidanceList}}" wx:key='index' class="cardFileItem" bindtap="toGuiDetail" id="{{item.guidanceId}}" >
+                <view wx:if="{{item.guidanceDate == null}}">暂无记录</view>
+                <view wx:else style="display:flex;width:100%">
+                    <van-icon name="medal" color="#1989FA" size="34rpx" />
+                    <view style="flex:1">
+                        <view>
+                            {{item.guidanceDate}}
+                            <text wx:if="{{item.guidanceCheck != 0}}" class="check">(已审核)</text>
+                            <text wx:else class="check">(待审核)</text>
+                        </view>
+                    </view>
+                    <van-icon name="arrow"/>
+                </view>
+                
+            </view>
+        </view>
+    </view>
+</view>
+

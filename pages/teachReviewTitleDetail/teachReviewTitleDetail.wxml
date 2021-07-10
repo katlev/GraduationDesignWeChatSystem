@@ -1,0 +1,10 @@
+<!--pages/teachReviewTitleDetail/teachReviewTitleDetail.wxml-->
+<import src="/template/titleDetail/selectTitleDetail.wxml"></import>
+<view>
+  <i-alert>请认真查看题目信息，确定是否通过题目</i-alert>
+  <template is="selectTitleDetail" data="{{titleDetail}}"></template>
+  <view class="flex">
+    <button class="confirm-btn" bindtap="checkTitleBtn">通过</button>
+    <button class="warn-btn" bindtap="returnTitleBtn">退回</button>
+  </view>
+</view>

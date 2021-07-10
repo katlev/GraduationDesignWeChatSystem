@@ -1,0 +1,89 @@
+<!--pages/teachManageMsg/teachManageMsg.wxml-->
+<view class="list">
+  <scroll-view
+    scroll-y
+    class="detailScroll"
+    refresher-enabled
+    refresher-triggered="{{isTriggered}}"
+    bindrefresherrefresh="handleRefresher"
+  >
+    <!-- 警告框 -->
+  <i-alert>
+    注意:
+    <view solt="desc">请认真查看学生信息和题目信息，并确定是否通过学生选择的题目！</view>
+  </i-alert>
+  <!-- 学生信息 -->
+  <i-panel title="学生信息">
+    <view class="listItem">
+    <view class="listTitle">选题学生：</view>
+    <view class="listValue">{{selectInfo.username}}</view>
+    </view>
+    <view class="listItem">
+      <view class="listTitle">学号：</view>
+      <view class="listValue">{{selectInfo.usernum}}</view>
+    </view>
+    <view class="listItem">
+      <view class="listTitle">所在学院：</view>
+      <view class="listValue">{{selectInfo.college}}</view>
+    </view>
+    <view class="listItem">
+      <view class="listTitle">所学专业：</view>
+      <view class="listValue">{{selectInfo.major}}</view>
+    </view>
+    <view class="listItem">
+      <view class="listTitle">专业班级：</view>
+      <view class="listValue">{{selectInfo.grade}}</view>
+    </view>
+  </i-panel>
+  <!-- 题目信息 -->
+  <i-panel title="选题信息">
+    <view class="listItem">
+      <view class="listTitle">题目名称：</view>
+      <view class="listValue">{{selectInfo.titleName}}</view>
+    </view>
+    <view class="listItem">
+      <view class="listTitle">题目类型：</view>
+      <view class="listValue">{{selectInfo.titleKind}}</view>
+    </view>
+    <view class="listItem">
+      <view class="listTitle">选题模式：</view>
+      <view class="listValue">{{selectInfo.titleModel}}</view>
+    </view>
+    <view class="listItem">
+      <view class="listTitle">可选专业：</view>
+      <view class="listValue">{{selectInfo.titleMajor}}</view>
+    </view>
+    <view class="listItem">
+      <view class="listTitle">类型：</view>
+      <view class="listValue">{{selectInfo.titleType}}</view>
+    </view>
+    <view class="listItem">
+      <view class="listTitle">实践中完成：</view>
+      <view class="listValue">{{selectInfo.titleComplete}}</view>
+    </view>
+    <view class="MsgItem">
+      <view class="msgTitle">命题内容和要求：</view>
+      <view class="msgValue">
+        {{selectInfo.titleValue}}
+      </view>
+    </view>
+    <view class="listItem">
+      <view class="listTitle">所需条件：</view>
+      <view class="listValue">{{selectInfo.titleRequire}}</view>
+    </view>
+    <view class="listItem">
+      <view class="listTitle">预期成果：</view>
+      <view class="listValue">{{selectInfo.titleResult}}</view>
+    </view>
+    <view class="listItem">
+      <view class="listTitle">状态：</view>
+      <view class="listValue check">{{selectInfo.state}}</view>
+    </view>
+  </i-panel>
+  <!-- 确认按钮 -->
+  <view class="checkBtn">
+    <button class="confirm-btn" bindtap="agreeTitle">选择</button>
+    <button class="warn-btn" bindtap="refuseTitle">拒绝</button>
+  </view>
+  </scroll-view>
+</view>

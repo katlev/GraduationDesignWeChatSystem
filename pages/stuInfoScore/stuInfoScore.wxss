@@ -1,0 +1,11 @@
+/* pages/stuInfoScore/stuInfoScore.wxss */
+page{
+    background-color: #ededed;
+}
+.cardList{
+    margin-top: 40rpx;
+}
+.cardBottom{
+    margin:40rpx 0;
+}
+

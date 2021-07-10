@@ -1,0 +1,46 @@
+<template name="defence">
+    <view class="Card">
+        <view class="title flex bottomPad">
+            <van-icon name="star" color="#FFD21E" size="32rpx" />
+            <view class="flexMiddle titleColor">答辩信息</view>
+        </view>
+
+        <view class="topPad">
+            <view class="flex bottomPad">
+
+                <view class="secondTitle">答辩场次：</view>
+                <view class="flexMiddle">{{item.defenceName}}</view>
+            </view>
+
+            <view class="flex bottomPad">
+
+                <view class="secondTitle">答辩地点：</view>
+                <view class="flexMiddle">{{item.defencePlace}}</view>
+            </view>
+
+            <view class="flex bottomPad">
+
+                <view class="secondTitle">答辩时间：</view>
+                <view class="flexMiddle">{{item.defenceDate}} {{item.defenceTime}}</view>
+            </view>
+
+            <view class="flex bottomPad">
+
+                <view class="secondTitle">答辩组组长：</view>
+                <view class="flexMiddle">{{item.defenceLeader}}</view>
+            </view>
+
+            <view class="flex bottomPad">
+
+                <view class="secondTitle">参辩教师：</view>
+                <view class="flexMiddle">{{item.defenceTeachs}}</view>
+            </view>
+
+            <view class="flex bottomPad">
+                <view class="secondTitle">参辩学生：</view>
+                <view class="flexMiddle">{{item.defenceStudents}}</view>
+            </view>
+        </view>
+    </view>
+
+</template>

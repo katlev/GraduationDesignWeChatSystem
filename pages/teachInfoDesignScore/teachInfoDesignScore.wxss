@@ -1,0 +1,12 @@
+/* pages/teachInfoDesignScore/teachInfoDesignScore.wxss */
+.content{
+  margin-left: 20rpx;
+}
+.describleInfo{
+  font-size: 24rpx;
+  color: #bbbec4;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

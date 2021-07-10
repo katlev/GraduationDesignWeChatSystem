@@ -1,0 +1,33 @@
+<!--pages/stuInfoDetPwd/stuInfoDetPwd.wxml-->
+<!-- <import src="/template/pwdSet/pwdSet.wxml"/> -->
+<view>
+    <view class="pwdDesc">
+        <i-alert>请设置毕设管理系统密码，你可以用学校给出的学号+密码进行登录，更便捷。</i-alert>
+    </view>
+    <view class="pwdForm">
+        <view class="pwdFormTitle">
+            <text >登录账号</text>
+            <text class="titleValue">{{usernum}}</text>
+        </view>
+        <view class="pwdFormContent">
+            <view class="pwdFormItem">
+                <text>原密码</text>
+                <input class="pwdItemValue" type="text" placeholder="填写原密码" id="originalPwd" bindinput="handInput" />
+            </view>
+            <view class="pwdFormItem">
+                <text>新密码</text>
+                <input class="pwdItemValue" type="text" placeholder="填写新密码" id="newPwd" bindinput="handInput" />
+            </view>
+            <view class="pwdFormItem">
+                <text>确认密码</text>
+                <input class="pwdItemValue" type="text" placeholder="再次填写确认" id="checkPwd" bindinput="handInput" />
+            </view>
+            <view class="pwdFooter">
+                <text>密码必须是6-12位的数字组合</text>
+            </view>
+
+        </view>
+    </view>
+    <button class="pwdBtn" bindtap="stuPwdSet">提交</button>
+</view>
+

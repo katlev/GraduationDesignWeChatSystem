@@ -1,0 +1,3 @@
+/* pages/teachManageStuFileMiddle/teachManageStuFileMiddle.wxss */
+@import '/template/cardTemplate/teachCard.wxss';
+@import '/template/cardTemplate/cardTemplate.wxss';

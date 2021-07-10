@@ -1,0 +1,62 @@
+<!--pages/stuDocUploadGuiForm/stuDocUploadGuiForm.wxml-->
+<view>
+    <!--警告窗-->
+    <view>
+        <i-alert>
+             添加指导记录须知
+            <view slot="desc">
+                请看清楚填写格式，认真填写相关内容！其中，指导形式的选择中，若选择现场指导，请补充说明指导地点；若选择线上指导，请补充说明使用工具！
+            </view>
+        </i-alert>
+    </view>
+
+    <view>
+        <i-panel title="添加内容">
+            <!-- 日期选择选择器 -->
+            <picker bindchange="datePicker" mode="date" value="{{date}}" start="2020-01-01" end="2025-12-31">
+                <view class="kindPicker">
+                    <view class="kindTitle">指导日期：</view>
+                    <view class="kindContent">{{date}}</view>
+                    <view class="iconfont icon-jf-row"></view>
+                </view>
+            </picker>
+            <!--指导形式选择器-->
+            <picker bindchange="guiFormPicker" value="guiFormIndex" range="{{guiFormArr}}">
+                <view class="kindPicker">
+                    <view class="kindTitle">指导形式：</view>
+                    <view class="kindContent">{{guiFormValue}}</view>
+                    <view class="iconfont icon-jf-row"></view>
+                </view>
+            </picker>
+
+            <!--指导形式补充说明-->
+            <view class="titleTextArea">
+                <view class="textHead">补充说明：</view>
+                <view class="textarea">
+                    <textarea style="height: 100rpx" placeholder="指导形式选择现场指导，请写明指导地点，选择线上指导，请写明使用工具" bindinput="handleValue" id="guiSupplement"></textarea>
+                </view>
+            </view>
+
+            <!--指导内容-->
+            <view class="titleTextArea">
+                <view class="textHead">指导内容：</view>
+                <view class="textarea">
+                    <textarea style="height: 200rpx" placeholder="请说明指导内容" bindinput="handleValue" id="guiValue"></textarea>
+                </view>
+            </view>
+
+            <!--添加附件-->
+            <view class="titleTextArea">
+                <view class="textHead uploadFile">
+                    <view class="uploadHead">添加附件：</view>
+                    <button class="uploadBtn" bindtap="uploadGuidanceFile">浏览</button>
+                </view>
+                <view class="textHead">
+                    <view wx:if="{{guiName == ''}}" class="fileExplain">支持附件格式为doc，docx，pdf，wps，rar，zip</view>
+                    <view wx:else class="fileExplain file">{{guiName}}</view>
+                </view>
+            </view>
+        </i-panel>
+        <button class="addBtn" bindtap="addGuidanceItem">添加</button>
+    </view>
+</view>

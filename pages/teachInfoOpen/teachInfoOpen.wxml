@@ -1,0 +1,16 @@
+<!--pages/teachInfoOpen/teachInfoOpen.wxml-->
+<import src="../../template/defence/defence.wxml"></import>
+<view>
+  <view class="content">
+        <view wx:if="{{listContent.length === 0}}">
+            <van-empty description="暂无数据" />
+        </view>
+        <view class="caption-wrap" wx:else>
+            <van-collapse value="{{activeNames}}"  bind:change="onChange" accordion>
+                <van-collapse-item wx:for="{{listContent}}" wx:key="index" title="{{item.defenceName}}" name="{{index}}">
+                    <template is='defence' data="{{item}}"></template>
+                </van-collapse-item>
+            </van-collapse>
+        </view>
+  </view>
+</view>

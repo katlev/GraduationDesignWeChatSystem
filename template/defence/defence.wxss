@@ -1,0 +1,28 @@
+.Card{
+  margin: 40rpx;
+  padding: 20rpx;
+  border:1rpx solid #dddee1;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  background-color: #ffffff;
+}
+.title{
+  border-bottom: 1rpx solid #f8f8f8;
+}
+.bottomPad{
+  padding-bottom: 20rpx;
+}
+.topPad{
+  padding-top: 20rpx;
+}
+.mini-btn{
+  font-size: 28rpx!important;
+}
+.titleColor{
+  color: #969799;
+  line-height:60rpx;
+  font-size: 30rpx;
+}
+.secondTitle{
+  color: #495060;
+}

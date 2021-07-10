@@ -1,0 +1,10 @@
+<!--pages/teachReviewStuFilePlanDet/teachReviewStuFilePlanDet.wxml-->
+<import src="/template/cardTemplate/teachCard.wxml"></import>
+<import src="/template/cardTemplate/planDetail.wxml"></import>
+<view>
+  <!-- 学生名片信息 -->
+  <template is="teachCard" data="{{stuInfo}}"></template>
+
+  <!-- 指导记录内容 -->
+  <template is='planDetail' data="{{planDetail}}"></template>
+</view>

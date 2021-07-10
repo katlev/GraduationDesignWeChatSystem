@@ -1,0 +1,23 @@
+<!--pages/stuInfoDetail/stuInfoDetail.wxml-->
+<view class="perDetContainer">
+    <view class="perItem">
+        <text>姓名</text>
+        <text class="perItemValue">{{perInfo.username}}</text>
+    </view>
+    <view class="perItem">
+        <text>学号</text>
+        <text class="perItemValue">{{perInfo.usernum}}</text>
+    </view>
+    <view class="perItem">
+        <text>学院</text>
+        <text class="perItemValue">{{perInfo.college}}</text>
+    </view>
+    <view class="perItem">
+        <text>专业</text>
+        <text class="perItemValue">{{perInfo.major}}</text>
+    </view>
+    <view class="perItem">
+        <text>专业班级</text>
+        <text class="perItemValue">{{perInfo.grade}}</text>
+    </view>
+</view>

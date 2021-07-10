@@ -1,0 +1,36 @@
+<!--pages/teachReviewTask/teachReviewTask.wxml-->
+<view>
+  <!-- 头部 -->
+  <view class="flex header">
+    <view class="flexMiddle titleColor">审核任务书列表</view>
+    <button class="mini-btn" type="primary" size="mini" bindtap="selectAll">全选</button>
+    <button class="mini-btn" type="primary" size="mini" bindtap="checkTask">通过</button>
+    <button class="mini-btn" type="primary" size="mini" bindtap="returnTask">退回</button>
+  </view>
+
+  <!-- 任务书列表 -->
+  <scroll-view 
+    scroll-y
+    class="titleScroll"
+    refresher-enabled
+    refresher-triggered="{{isTriggered}}"
+    bindrefresherrefresh="handleRefresher"
+    bindscrolltolower="handleToLower"
+  >
+    <view wx:if="{{list.length === 0}}">
+      <van-empty description="暂无数据"></van-empty>
+    </view>
+    <van-checkbox-group wx:else value="{{ result }}" bind:change="onChange">
+      <van-cell-group>
+        <van-cell center wx:for="{{ list }}" wx:key="index" value-class="value-class" clickable
+          data-index="{{ index }}">
+          <view slot="title" bindtap="toTaskDetail" id="{{item.userId}}">
+            <view>{{item.taskName}}</view>
+            <view style="font-size:28rpx;color:#07C160">{{item.taskCheck}}</view>
+          </view>
+          <van-checkbox name="{{item.userId}}" />
+        </van-cell>
+      </van-cell-group>
+    </van-checkbox-group>
+  </scroll-view>
+</view>

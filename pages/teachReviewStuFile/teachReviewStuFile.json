@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "学生过程文档详情",
+  "usingComponents": {
+    "van-image":"/static/vant/dist/image/index",
+    "van-icon":"/static/vant/dist/icon/index",
+    "van-cell-group":"/static/vant/dist/cell-group/index",
+    "van-field":"/static/vant/dist/field/index"
+  }
+}

@@ -1,0 +1,35 @@
+<!--pages/teachInfoTitleList/teachInfoTitleList.wxml-->
+<view>
+  <!-- 年份选择 -->
+  <view class="yearPicker">
+    <view class="pickerHead">选择日期</view>
+    <picker class="pickerContent" mode="date" bindchange="yearChoicePicker" value="{{date}}" id="{{data}}"
+      start="2020-01-01" end="2025-12-30">
+      <view>
+        {{date}}
+      </view>
+    </picker>
+  </view>
+
+  <!-- 题目列表显示 -->
+  <scroll-view
+    scroll-y
+    class="titleScroll"
+    refresher-enabled
+    refresher-triggered="{{isTriggered}}"
+    bindrefresherrefresh="handleRefresher"
+    bindscrolltolower="handleToLower"
+  >
+    <view wx:if="{{titleList.length == 0}}">
+      <van-empty description="暂无数据" />
+    </view>
+    <view wx:else>
+      <van-cell-group>
+        <van-cell wx:for="{{titleList}}" wx:key="index" title="{{item.titleName}}" id="{{item.titleId}}" is-link
+          url="/pages/teachIndexDetail/teachIndexDetail?titleId={{item.titleId}}" bindtap="toDetail">
+        </van-cell>
+      </van-cell-group>
+    </view>
+  </scroll-view>
+
+</view>

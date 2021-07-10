@@ -1,0 +1,36 @@
+.fileHead{
+  display: flex;
+  font-size: 34rpx;
+  color: #1c2438;
+  border-bottom: 1rpx solid #e9eaec;
+  padding-bottom: 10rpx;
+}
+.head{
+  flex:1;
+  margin-left: 10rpx;
+}
+.fileContent{
+  font-size: 30rpx;
+  color: #80848f;
+}
+.cardFileItem{
+  margin: 30rpx 0;
+  border-bottom: 1rpx solid #e9eaec;
+  padding-bottom: 10rpx;
+}
+.flex{
+  display: flex;
+}
+.footerContent{
+  flex:1;
+  margin-left: 10rpx;
+}
+.padding{
+  padding: 20rpx;
+}
+.check{
+  color:#07C160;
+}
+.waitCheck{
+  color:#1989FA;
+}

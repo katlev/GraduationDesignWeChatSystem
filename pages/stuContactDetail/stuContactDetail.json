@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "给教师留言",
+  "usingComponents": {
+    "van-image":"/static/vant/dist/image/index",
+    "van-icon":"/static/vant/dist/icon/index",
+    "van-empty":"/static/vant/dist/empty/index"
+  }
+}

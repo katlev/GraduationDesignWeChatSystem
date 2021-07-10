@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "指导记录审核详情",
+  "usingComponents": {
+    "van-icon":"/static/vant/dist/icon/index",
+    "van-image":"/static/vant/dist/image/index",
+    "van-cell-group":"/static/vant/dist/cell-group/index",
+    "van-field":"/static/vant/dist/field/index",
+    "van-switch":"/static/vant/dist/switch/index"
+  }
+}

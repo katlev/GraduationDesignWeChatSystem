@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-swipeout":"/static/dist/swipeout/index",
+    "van-empty":"/static/vant/dist/empty/index"
+  },
+  "navigationBarTitleText": "题目申报记录"
+}

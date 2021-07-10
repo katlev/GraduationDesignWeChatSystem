@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "题目申报",
+  "usingComponents": {
+    "i-alert":"/static/dist/alert/index",
+    "i-panel":"/static/dist/panel/index",
+    "i-input":"/static/dist/input/index",
+    "i-cell":"/static/dist/cell/index"
+  }
+}

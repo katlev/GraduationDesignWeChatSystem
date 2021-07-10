@@ -1,0 +1,7 @@
+<!--pages/stuIndexDetail/stuIndexDetail.wxml-->
+<import src="/template/titleDetail/selectTitleDetail.wxml"></import>
+<view>
+  <i-alert>请认真查看题目信息，每人可选择一个题目，待开题教师确认后，即表示题目选择成功，若教师拒绝，则可再次选题！</i-alert>
+  <template is="selectTitleDetail" data="{{titleDetail}}"></template>
+  <button class="confirm-btn" bindtap="checkSelect">确定选题</button>
+</view>

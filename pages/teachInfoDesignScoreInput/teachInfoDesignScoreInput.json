@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "录入毕设答辩成绩",
+  "usingComponents": {
+    "van-image":"/static/vant/dist/image/index"
+  }
+}

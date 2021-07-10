@@ -1,0 +1,48 @@
+<!--pages/stuDocUploadTranslation/stuDocUploadTranslation.wxml-->
+<import src="/template/uploadFile/uploadFile.wxml" />
+<view>
+    <!-- 卡片头部 -->
+    <template is="uploadFile" data="{{perInfo}}" />
+    <!-- 文件内容上传 -->
+    <view class="Card">
+        <view class="fileHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            <view class="head">外文译文报告上传</view>
+        </view>
+        <view class="fileContent">
+            <!-- 开题报告 -->
+            <view class="cardFileItem">
+                <view class="secondTitle">外文译文：</view>
+                <view class="footerContent">
+                    <view wx:if="{{translationName == null}}">文件仅支持pdf,doc,docx等格式</view>
+                    <view wx:elif="{{translationName == ''}}">文件仅支持pdf,doc,docx等格式</view>
+                    <view wx:else class="file" bindtap="readTranslationFile">{{translationName}}</view>
+                </view>
+            </view>
+            <button wx:if="{{translationName == null}}" class="uploadBtn" bindtap="uploadTranslationFile">上传</button>
+            <button wx:else hidden="{{translationCheck == 1}}" class="uploadBtn" bindtap="uploadTranslationFile">修改</button>
+            
+        </view>
+    </view>
+    <!-- 审核状态 -->
+    <view class="Card" wx:if="{{translationName != null}}">
+        <view class="cardHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            外文译文报告审核状态
+        </view>
+        <view class="fileContent">
+            <view class=" stateDis stateItem">
+                <view class="secondTitle">审核状态：</view>
+                <view class="check" wx:if="{{translationCheck == 0}}">等待审核</view>
+                <view class="check" wx:if="{{translationCheck == 1}}">审核通过</view>
+                <view class="check" wx:if="{{translationCheck == 2}}">审核不通过</view>
+            </view>
+            <view class="stateItem" wx:if="{{translationCheck != 0}}">
+                <view class="secondTitle">审核意见：</view>
+                <view wx:if="{{translationOpinion == null}}" class="text">暂无意见</view>
+                <view wx:elif="{{translationOpinion == ''}}" class="text">暂无意见</view>
+                <view wx:else class="text">{{translationOpinion}}</view>
+            </view>
+        </view>
+    </view>
+</view>

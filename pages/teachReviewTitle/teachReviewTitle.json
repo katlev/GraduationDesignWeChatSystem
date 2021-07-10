@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "题目审核",
+  "usingComponents": {
+    "van-cell":"/static/vant/dist/cell/index",
+    "van-cell-group":"/static/vant/dist/cell-group/index",
+    "van-checkbox":"/static/vant/dist/checkbox/index",
+    "van-checkbox-group":"/static/vant/dist/checkbox-group/index","van-empty":"/static/vant/dist/empty/index"
+  }
+}

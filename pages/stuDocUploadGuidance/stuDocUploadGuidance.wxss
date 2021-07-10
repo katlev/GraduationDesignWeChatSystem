@@ -1,0 +1,5 @@
+/* pages/stuDocUploadGuidance/stuDocUploadGuidance.wxss */
+@import '/template/uploadFile/uploadFile.wxss';
+@import '/template/uploadFile/planAndGui.wxss';
+
+

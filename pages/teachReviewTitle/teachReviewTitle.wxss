@@ -1,0 +1,15 @@
+/* pages/teachReviewTitle/teachReviewTitle.wxss */
+
+.header{
+  padding: 16rpx;
+}
+.mini-btn{
+  font-size: 30rpx!important;
+  margin-left: 10rpx;
+}
+.value-class {
+  flex: none !important;
+}
+.titleScroll{
+  height: calc(100vh - 92rpx);
+}

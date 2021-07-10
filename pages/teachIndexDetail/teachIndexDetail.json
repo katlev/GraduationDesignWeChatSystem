@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "题目详情",
+  "usingComponents": {
+    "i-panel":"/static/dist/panel/index",
+    "i-load-more":"/static/dist/load-more/index"
+  }
+}

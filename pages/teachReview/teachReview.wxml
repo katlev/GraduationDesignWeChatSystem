@@ -1,0 +1,31 @@
+<!--pages/teachReview/teachReview.wxml-->
+<import src="/template/tabTemplate/tabTemplate.wxml"></import>
+<view>
+  <!-- 导航通知栏 -->
+  <view wx:if="{{expert === 'expert'}}">
+    <van-notice-bar left-icon="volume-o" text="你被指定为评阅专家身份！"/> 
+  </view>
+
+  <!-- 内容 -->
+  <view>
+    <view class="card flex titleBg" bindtap="toReviewTitle">
+      <van-icon name="edit" size="50px" />
+      <view class="flexMiddle contentTitle">审核题目</view>
+      <van-icon name="arrow" size="25px" />
+    </view>
+
+    <view class="card flex taskBg" bindtap="toReivewTask">
+      <van-icon name="column" size="50px" />
+      <view class="flexMiddle contentTitle">审核任务书</view>
+      <van-icon name="arrow" size="25px" />
+    </view>
+
+    <view class="card flex stuBg" bindtap="toReviewStu">
+      <van-icon name="friends" size="50px" />
+      <view class="flexMiddle contentTitle">评阅学生</view>
+      <van-icon name="arrow" size="25px" />
+    </view>
+  </view> 
+</view>
+
+<template is="tabBar" data="{{tabBar}}"></template>

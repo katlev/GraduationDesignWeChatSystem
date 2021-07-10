@@ -1,0 +1,88 @@
+<!--pages/teachManage/teachManage.wxml-->
+<import src="/template/tabTemplate/tabTemplate.wxml" />
+<view>
+  <i-tabs current="{{current}}" bindchange="handleChange">
+    <i-tab key="tab1" title="选题管理"></i-tab>
+    <i-tab key="tab2" title="学生管理"></i-tab>
+  </i-tabs>
+  <view>
+    <!-- 标签页1 -->
+    <view wx:if="{{current === 'tab1'}}">
+      <scroll-view scroll-y class="scrollContent" refresher-enabled refresher-triggered="{{isTriggered}}"
+        bindrefresherrefresh="handleRefresher">
+        <!-- 空状态 -->
+        <view wx:if="{{msgList.length == 0}}">
+          <van-empty description="消息列表空空如也"></van-empty>
+        </view>
+        <!-- 消息列表 -->
+        <view wx:else style="margin-bottom:105rpx">
+          <view class="i-swipeout-demo" wx:for="{{msgList}}" wx:key='index'>
+            <i-swipeout i-class="i-swipeout-demo-item" operateWidth="{{80}}">
+              <view slot="content" bindtap="toMsgDetail" id="{{item.titleId}}">
+                <view class="i-swipeout-des">
+                  <view class="i-swipeout-des-h2">
+                    {{item.titleName}}
+                  </view>
+                  <view class="icon">
+                    <text class="iconfont icon-jf-row enter"></text>
+                  </view>
+                </view>
+                <view class="studentDes">
+                  <view>选题学生：{{item.usernum}} {{item.username}} </view>
+                  <view class="check">{{item.state}}</view>
+                </view>
+              </view>
+              <!-- <view slot="button" class="i-swipeout-demo-button-group">
+              <view class="i-swipeout-demo-button" bindtap="slideButtonTap" >删除</view>
+            </view> -->
+            </i-swipeout>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <!-- 标签页2 -->
+    <view wx:if="{{current === 'tab2'}}">
+      <scroll-view scroll-y class="scrollContent" refresher-enabled refresher-triggered="{{isTriggeredTab2}}"
+        bindrefresherrefresh="handleRefresherTab2">
+        <!-- 空状态 -->
+        <view wx:if="{{stuList.length == 0}}">
+          <van-empty description="还没有选题学生哦"></van-empty>
+        </view>
+        <!-- 选题学生列表 -->
+        <view wx:else style="margin-bottom:105rpx">
+          <view class="i-swipeout-demo" wx:for="{{stuList}}" wx:key="index">
+            <i-swipeout i-class="i-swipeout-demo-item" operateWidth="{{80}}">
+              <view slot="content" bindtap="toStuManage" id="{{item.titleId}}" class="stuItem">
+                <view class="stuImg">
+                  <van-image round width="80rpx" height="80rpx" fit="cover"
+                    src="{{item.avatar?item.avatar:'/static/images/missing-face.png'}}" />
+                </view>
+                <view class="stuValue">
+                  <view class="i-swipeout-des">
+                    <view class="i-swipeout-des-h2">
+                      {{item.usernum}} {{item.username}}
+                    </view>
+                    <view class="icon">
+                      <text class="iconfont icon-jf-row enter"></text>
+                    </view>
+                  </view>
+                  <view class="titleDes">
+                    <view class="title">题目：</view>
+                    <view class="titleValue">{{item.titleName}}</view>
+                  </view>
+                </view>
+              </view>
+
+              <view slot="button" class="i-swipeout-demo-button-group">
+                <view class="i-swipeout-demo-button" bindtap="slideButtonTap" id="{{item.userId}}">删除</view>
+              </view>
+            </i-swipeout>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部导航 -->
+<template is="tabBar" data="{{tabBar}}" />

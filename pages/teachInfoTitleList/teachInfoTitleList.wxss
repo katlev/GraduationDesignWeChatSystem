@@ -1,0 +1,24 @@
+/* pages/teachInfoTitleList/teachInfoTitleList.wxss */
+.yearPicker{
+  margin: 20rpx;
+  border: 1rpx solid #dddee1;
+  border-radius: 5rpx;
+  display: flex;
+  font-size: 30rpx;
+  background-color: #e9eaec                  ;
+
+}
+.pickerHead{
+  color: #1c2438;
+  border-right: 1rpx solid #dddee1;
+  padding: 10rpx;
+
+}
+.pickerContent{
+  flex: 1;
+  padding: 10rpx;
+  color: #495060;
+}
+.titleScroll{
+  height: calc(100vh - 70rpx);
+}

@@ -1,0 +1,13 @@
+/* pages/stuIndex/stuIndex.wxss */
+page{
+    background-color: #ededed;
+}
+.cellGroup{
+    margin-bottom: 120rpx;
+}
+.titleScroll{
+    /* 109 */
+    height: calc(100vh - 109rpx);
+}
+
+

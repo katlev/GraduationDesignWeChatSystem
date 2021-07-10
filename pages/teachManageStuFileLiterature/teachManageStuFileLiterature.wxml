@@ -1,0 +1,46 @@
+<!--pages/teachManageStuFileLiterature/teachManageStuFileLiterature.wxml-->
+<import src="/template/cardTemplate/teachCard.wxml" />
+<view>
+    <!--学生名片信息-->
+    <template is="teachCard" data="{{stuInfo}}"></template>
+
+    <!--审核表单-->
+    <view class="Card" style="z-index: 1">
+        <view class="formHead flex">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            <view class="contentFont fileColor " bindtap="openLiteratureFile" >{{literatureName}}</view>
+        </view>
+
+        <view class="contentFont formContent">
+            <view class="flex contentItem">
+                <view class="flexPosition">审核通过</view>
+                <view wx:if="{{literatureCheck == 0}}" hidden="{{literatureCheck != 0}}">
+                    <van-switch checked="{{ checked }}" size="20px" bind:change="onChange" />
+                </view>
+                <view wx:elif="{{literatureCheck == 1}}">
+                    <van-switch checked="{{true}}" size="20px" disabled />
+                </view>
+                <view wx:elif="{{literatureCheck == 2}}">
+                    <van-switch checked="{{false}}" size="20px" disabled />
+                </view>
+            </view>
+            <van-cell-group>
+                <view class="contentItem" wx:if="{{literatureOpinion != null}}">审核意见：{{literatureOpinion}}</view>
+                <van-field
+                        value="{{ message }}"
+                        type="textarea"
+                        label="审核意见"
+                        placeholder="请输入审核意见"
+                        autosize
+                        wx:else
+                        hidden="{{literatureOpinion != null}}"
+                        bind:change="inputMessage"
+                />
+            </van-cell-group>
+        </view>
+    </view>
+
+    <!--提交按钮-->
+    <button class="confirm-btn" bindtap="submitLiteratureCheck" hidden="{{literatureCheck != 0}}">提交</button>
+</view>
+

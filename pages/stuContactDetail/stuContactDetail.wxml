@@ -1,0 +1,56 @@
+<!--pages/stuContactDetail/stuContactDetail.wxml-->
+<view>
+  <!-- 教师名片信息 -->
+  <view class="Card">
+    <view class="cardHead">
+      <view class="cardImg">
+        <van-image round fit="cover" width="140rpx" height="140rpx"
+          src="{{teachInfo.avatar ? teachInfo.avatar : '/static/images/missing-face.png'}}" />
+      </view>
+      <view class="cardTitle">
+        <view>{{teachInfo.usernum}} {{teachInfo.username}}</view>
+        <view class="titleDes">{{teachInfo.college}}</view>
+      </view>
+    </view>
+    <view class="cardContent">
+      <view>职称：{{teachInfo.position}}</view>
+      <view>邮箱：{{teachInfo.email}}</view>
+    </view>
+  </view>
+
+  <view class="Card">
+    <view class="cardHead flex">
+      <van-icon name="star" color="#FFD21E" size="36rpx" />
+      <text class="secondTitle flexMiddle">留言记录</text>
+    </view>
+    <view wx:if="{{messageList.length == 0}}">
+      <van-empty description="暂无记录" />
+    </view>
+    <view wx:else>
+      <view class="bubble" wx:for="{{messageList}}" wx:key="index">
+        <view>
+          {{item.stuMessage}}
+          <view class="prompt">
+            {{item.stuDate}} {{item.stuTime}}
+          </view>
+        </view>
+        <view class="teachLeave" wx:if="{{item.teachMessage != null}}">
+          教师回复：{{item.teachMessage}}
+          <view class="prompt">
+            {{item.teachDate}} {{item.teachTime}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 留言输入框 -->
+  <view class="inputButtom flex">
+    <view class="flexMiddle bottomLeft">
+      <input type="text" id="message" value="{{message}}" bindinput="handleInput" />
+    </view>
+    <view class="bottomRight" bindtap="sendMessage">
+      <text>发送</text>
+    </view>
+  </view>
+</view>

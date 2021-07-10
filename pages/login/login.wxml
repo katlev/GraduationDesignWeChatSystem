@@ -1,0 +1,38 @@
+<!--pages/login/login.wxml-->
+
+<view class="container">
+  <view class="wrapper">
+    <view class="left-top-sign">LOGIN</view>
+    <view class="welcome">
+      欢迎回来！
+    </view>
+    <view class="input-content">
+      <view class="input-item">
+        <text class="tit">学号/教工号</text>
+        <input  type="text" placeholder="请输入学号/教工号" data-test="abc" data-type="usernum" id="usernum" bindinput="handleInput"/>
+      </view>
+      <view class="input-item">
+        <text class="tit">密码</text>
+        <input type="password"  placeholder="请输入密码" data-test="abc" data-type="password" id="password" bindinput="handleInput"/>
+      </view>
+      <view class="input-item">
+        <text class="tit">身份</text>
+        <radio-group class="checkboxs" bindchange="handleRadio">
+          <label>
+            <radio class="boxs" value="teacher"/>教师
+          </label>
+          <label>
+            <radio class="boxs" value="student"/>学生
+          </label>
+        </radio-group>
+      </view>
+    </view>
+    <button class="confirm-btn" bindtap="login" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
+   <!--  <view class="forget-section">
+      忘记密码?
+    </view> -->
+  </view>
+  <view class="register-section">
+    @毕设管理系统
+  </view>
+</view>

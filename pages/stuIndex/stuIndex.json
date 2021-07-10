@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "选题首页",
+  "usingComponents": {
+    "mp-searchbar": "weui-miniprogram/searchbar/searchbar",
+    "i-cell-group":"/static/dist/cell-group/index",
+    "i-cell":"/static/dist/cell/index",
+    "van-empty":"/static/vant/dist/empty/index"
+  }
+}

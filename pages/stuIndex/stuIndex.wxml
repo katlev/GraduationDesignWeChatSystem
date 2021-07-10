@@ -1,0 +1,29 @@
+<!--pages/stuIndex/stuIndex.wxml-->
+<import src="/template/tabTemplate/tabTemplate.wxml"/>
+<view>
+  <view class="page__bd">
+        <mp-searchbar bindselectresult="selectResult" search="{{search}}" bindclear="clearValue" ></mp-searchbar>
+  </view>
+
+  <scroll-view
+    scroll-y
+    class="titleScroll"
+    refresher-enabled
+    refresher-triggered="{{isTriggered}}"
+    bindrefresherrefresh="handleRefresher"
+    bindscrolltolower="handleToLower"
+  >
+    <view wx:if="{{titleList.length != 0}}" class="cellGroup">
+      <i-cell-group>
+        <i-cell wx:for="{{titleList}}" wx:key='index' title="{{item.titleName}}" label="{{item.username + ' ' + item.college}}" is-link url="/pages/stuIndexDetail/stuIndexDetail?titleId={{item.titleId}}" id="{{item.titleId}}" bindtap="clickCell"></i-cell>
+      </i-cell-group>
+    </view>
+
+    <view wx:else>
+      <van-empty description="暂无数据" />
+    </view>
+  </scroll-view>
+  
+</view>
+<template is="tabBar" data="{{tabBar}}" />
+

@@ -1,0 +1,12 @@
+/* pages/stuDefence/stuDefence.wxss */
+@import '/template/defence/defence.wxss';
+.content{
+    margin-left: 20rpx;
+}
+.describleInfo{
+    font-size: 24rpx;
+    color: #bbbec4;
+}
+.titleScroll{
+    height: calc(100vh - 108rpx);
+}

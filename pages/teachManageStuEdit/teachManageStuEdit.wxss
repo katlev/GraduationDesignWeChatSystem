@@ -1,0 +1,3 @@
+/* pages/teachManageStuEdit/teachManageStuEdit.wxss */
+@import '/template/cardTemplate/teachCard.wxss';
+@import '/template/cardTemplate/scoreInput.wxss';

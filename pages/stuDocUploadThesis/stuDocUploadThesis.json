@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "毕业论文报告上传",
+  "usingComponents": {
+    "van-icon":"/static/vant/dist/icon/index"
+  }
+}

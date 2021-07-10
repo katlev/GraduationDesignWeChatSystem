@@ -1,0 +1,64 @@
+/* pages/teachManage/teachManage.wxss */
+.i-swipeout-item{
+    padding:8px 8px!important;
+}
+.i-swipeout-des{
+    display: flex;
+    position: relative;
+}
+.i-swipeout-des-h2{
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 500rpx;
+    text-overflow: ellipsis;
+}
+.i-swipeout-des .icon{
+    position: absolute;
+    right: 0;
+}
+.studentDes{
+    font-size: 26rpx;
+    color:#80848f;
+    display: flex;
+}
+.check{
+    color: #07C160;
+    margin-left: 40rpx;
+}
+.i-swipeout-demo-button-group{
+    background-color: #ed3f14;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30rpx;
+}
+.i-swipeout-demo-button{
+    color:#fff;
+}
+.titleDes{
+    display: flex;
+    font-size: 26rpx;
+    color:#80848f ;
+}
+.titleValue{
+    flex: 1;  
+    max-width: 500rpx;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.scrollContent{
+    height: calc(100vh - 84rpx);
+}
+.stuItem{
+    display: flex;
+}
+.stuImg{
+    margin-right: 20rpx;
+}
+.stuValue{
+    flex:1;
+}

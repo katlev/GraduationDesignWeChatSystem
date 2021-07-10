@@ -1,0 +1,34 @@
+/* pages/teachReviewStuFile/teachReviewStuFile.wxss */
+@import '/template/cardTemplate/teachCard.wxss';
+.fileHead{
+  padding: 20rpx;
+  display: flex;
+  font-size: 34rpx;
+  color: #1c2438;
+  border-bottom: 1rpx solid #e9eaec;
+}
+.head{
+  margin-left: 10rpx;
+}
+.file textarea{
+  color:#1989FA;
+}
+.score textarea{
+  color: #ED3F14
+}
+
+.confirm-btn{
+  width: 630rpx!important;
+  height: 76rpx;
+  line-height: 76rpx;
+  border-radius: 50rpx;
+  margin-top:40rpx;
+  margin-bottom: 40rpx;
+  background: #07C160;
+  color: #fff;
+  font-size: 32rpx;
+  padding: 0;
+}
+.confirm-btn:active{
+  background-color: #07B160;
+}

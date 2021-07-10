@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "题目管理",
+  "usingComponents": {
+    "i-tabs":"/static/dist/tabs/index",
+    "i-tab":"/static/dist/tab/index",
+    "i-swipeout":"/static/dist/swipeout/index",
+    "van-empty": "/static/vant/dist/empty/index",
+    "van-image":"/static/vant/dist/image/index"
+
+  }
+}

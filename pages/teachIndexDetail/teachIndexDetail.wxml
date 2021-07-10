@@ -1,0 +1,8 @@
+<!--pages/teachIndexDetail/teachIndexDetail.wxml-->
+<import src="/template/titleDetail/titleDetail.wxml"></import>
+<view>
+    <template is="titleDetail" data="{{titleDetail}}"></template>
+    <i-load-more loading="{{false}}" />
+</view>
+
+

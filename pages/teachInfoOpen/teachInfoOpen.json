@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "开题答辩分组",
+  "usingComponents": {
+    "van-collapse":"/static/vant/dist/collapse/index",
+    "van-collapse-item":"/static/vant/dist/collapse-item/index",
+    "i-card":"/static/dist/card/index",
+    "van-empty":"/static/vant/dist/empty/index",
+    "van-icon":"/static/vant/dist/icon/index"
+  }
+}

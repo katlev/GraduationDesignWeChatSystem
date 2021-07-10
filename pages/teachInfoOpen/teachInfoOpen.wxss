@@ -1,0 +1,3 @@
+/* pages/teachInfoOpen/teachInfoOpen.wxss */
+@import '../../template/defence/defence.wxss';
+

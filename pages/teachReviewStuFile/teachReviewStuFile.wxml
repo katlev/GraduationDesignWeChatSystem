@@ -1,0 +1,114 @@
+<!--pages/teachReviewStuFile/teachReviewStuFile.wxml-->
+<import src="/template/cardTemplate/teachCard.wxml"></import>
+<view>
+  <template is="teachCard" data="{{stuInfo}}"></template>
+
+  <!-- 文档信息 -->
+  <view class="Card">
+    <view class="fileHead">
+        <van-icon name="star" color="#FFD21E" size="36rpx" />
+        <view class="head">过程文档信息</view>
+    </view>
+    <view style="padding:2rpx">
+      <van-cell-group>
+        <van-field
+          class="file"
+          value="{{files.startName}}"
+          label="开题报告"
+          type="textarea"
+          autosize
+          readonly
+          bindtap="readStartFile"
+        />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field
+          class="file"
+          value="{{files.middleName}}"
+          label="中期检查"
+          type="textarea"
+          autosize
+          readonly
+          bindtap="readMiddleFile"
+        />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field
+          class="file"
+          value="{{files.planStart}} - {{files.planEnd}}"
+          label="进度计划"
+          type="textarea"
+          autosize
+          readonly
+          bindtap="toPlanList"
+        />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field
+          class="file"
+          value="{{files.guidanceDate}}"
+          label="指导记录"
+          type="textarea"
+          autosize
+          readonly
+          bindtap="toGuidanceList"
+        />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field
+          class="file"
+          value="{{files.translationName}}"
+          label="外文译文"
+          type="textarea"
+          autosize
+          readonly
+          bindtap="readTranslationFile"
+        />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field
+          class="file"
+          value="{{files.originalName}}"
+          label="外文译文"
+          type="textarea"
+          autosize
+          readonly
+          bindtap="readOriginalFile"
+        />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field
+          class="file"
+          value="{{files.literatureName}}"
+          label="文献综述"
+          type="textarea"
+          autosize
+          readonly
+          bindtap="readLiteratureFile"
+        />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field
+          class="file"
+          value="{{files.thesisName}}"
+          label="毕业论文"
+          type="textarea"
+          autosize
+          readonly
+          bindtap="readThesisFile"
+        />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field
+          class="score"
+          value="{{readScore}}"
+          label="评阅分数"
+          type="textarea"
+          autosize
+          readonly
+        />
+      </van-cell-group>
+    </view>
+  </view>
+  <button hidden="{{readScore != null}}" class="confirm-btn" bindtap="toInputScore">成绩录入</button>
+</view>

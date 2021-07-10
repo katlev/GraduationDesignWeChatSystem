@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "添加进度计划",
+  "usingComponents": {
+    "van-icon":"/static/vant/dist/icon/index",
+    "i-alert":"/static/dist/alert/index",
+    "i-panel":"/static/dist/panel/index"
+  }
+}

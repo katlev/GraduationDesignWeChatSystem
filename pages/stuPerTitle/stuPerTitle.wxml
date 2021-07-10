@@ -1,0 +1,44 @@
+<!--pages/stuPerTitle/stuPerTitle.wxml-->
+<view>  
+   <view wx:if="{{titleInfo.titleId}}"  class="perDetContainer">
+        <view class="perItem flex">
+            <view class="titleWidth">题目</view>
+            <view class="perItemValue flexMiddle textPosition">{{titleInfo.titleName}}</view>
+        </view>
+        <view class="perItem">
+            <text>题目类型</text>
+            <text class="perItemValue">{{titleInfo.titleKind}}</text>
+        </view>
+        <view class="perItem">
+            <text>题目来源</text>
+            <text class="perItemValue">{{titleInfo.titleSource}}</text>
+        </view>
+        <view class="perItem flex">
+            <view style="width:160rpx">所属专业</view>
+            <view class="perItemValue flexMiddle textPosition">{{titleInfo.titleMajor}}</view>
+        </view>
+        <view class="perItem">
+            <text>选择模式</text>
+            <text class="perItemValue">{{titleInfo.titleModel}}</text>
+        </view>
+        <view class="perItem">
+            <text>开题教师</text>
+            <text class="perItemValue">{{titleInfo.username}}</text>
+        </view>
+        <view class="perItem">
+            <text>教师职称</text>
+            <text class="perItemValue">{{titleInfo.position}}</text>
+        </view>
+        <view class="perItem">
+            <text>教师联系邮箱</text>
+            <text class="perItemValue">{{titleInfo.email}}</text>
+        </view>
+        <view class="perItem">
+            <text>状态</text>
+            <text class="perItemValue check">{{titleInfo.state}}</text>
+        </view>
+   </view>
+   <view class="titleNav" wx:else>
+        <van-empty description="你还没有选题信息，请先去首页选题！"/>
+   </view>
+</view>

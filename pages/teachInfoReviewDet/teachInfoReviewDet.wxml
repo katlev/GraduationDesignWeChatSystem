@@ -1,0 +1,49 @@
+<!--pages/teachinfoReviewDet/teachInfoReviewDet.wxml-->
+<view>
+  <!-- 学生名片信息 -->
+  <view class="Card">
+    <view class="cardHead">
+      <view class="cardImg">
+        <van-image round fit="cover" width="140rpx" height="140rpx" src="{{stuInfo.avatar?stuInfo.avatar:'/static/images/missing-face.png'}}" />
+      </view>
+      <view class="cardTitle">
+        <view>{{stuInfo.usernum}} {{stuInfo.username}}</view>
+        <view class="titleDes">{{stuInfo.college}}</view>
+      </view>
+    </view>
+    <view class="cardContent">
+      <view>专业：{{stuInfo.major}}</view>
+    </view>
+  </view>
+
+  <view class="Card">
+    <view class="cardHead flex">
+      <van-icon name="star" color="#FFD21E" size="36rpx" />
+      <text class="secondTitle flexMiddle">留言信息</text>
+    </view>
+    <view>
+      <view class="marginButtom" wx:for="{{messageList}}" wx:key="index">
+        <view class="bubble">
+          <view>
+            {{item.stuMessage}}
+            <view class="prompt">
+              {{item.suDate}} {{item.stuTime}}
+            </view>
+          </view>
+        </view>
+        <view style="margin:30rpx  40rpx 20rpx 40rpx" class="flex">
+          <view class="flexMiddle flex">
+            <view class="reply">回复：</view>
+            <view class="flexMiddle">
+              <input wx:if="{{item.teachMessage == null}}" id="message" class="replyInput" type="text" bindinput="handleInput" />
+              <input wx:else class="replyInput fontColor" disabled value="{{item.teachMessage}}" type="text" />
+            </view>
+          </view>
+          <button hidden="{{item.teachMessage != null}}" class="mini-btn" type="primary" size="mini" id="{{item.messageId}}" bindtap="sendMessageToStu">发送</button>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+</view>

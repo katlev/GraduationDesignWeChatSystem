@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "个人成绩",
+  "usingComponents": {
+    "i-alert":"/static/dist/alert/index",
+    "i-card":"/static/dist/card/index",
+    "van-empty": "/static/vant/dist/empty/index"
+  }
+}

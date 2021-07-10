@@ -1,0 +1,38 @@
+<template name="planDetail">
+  <view class="Card">
+        <view class="cardHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            内容详情
+        </view>
+        <view class="fileContent CardPadding">
+            <view class="cardFileItem">
+                <view class="secondTitle">
+                    <van-icon name="hot" color="#1989FA" size="34rpx" />
+                    起止日期：
+                </view>
+                <view class="text">{{planDetail.planStart}} - {{planDetail.planEnd}}</view>
+            </view>
+            <view class="cardFileItem">
+                <view class="secondTitle">
+                    <van-icon name="hot" color="#1989FA" size="34rpx" />
+                    计划完成内容：
+                </view>
+                <view class="text">{{planDetail.planValue}}</view>
+            </view>
+            <view class="cardFileItem">
+                <view class="secondTitle">
+                    <van-icon name="hot" color="#1989FA" size="34rpx" />
+                    实际完成内容：
+                </view>
+                <view class="text">{{planDetail.actualValue}}</view>
+            </view>
+            <view class="cardFileItem">
+                <view class="secondTitle">
+                    <van-icon name="hot" color="#1989FA" size="34rpx" />
+                    相关附件：
+                </view>
+                <view class="text check" bindtap="openPlanFile">{{planDetail.planName}}</view>
+            </view>
+        </view>
+    </view>
+</template>

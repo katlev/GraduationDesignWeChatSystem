@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "毕业设计报告审核",
+  "usingComponents": {
+    "van-image":"/static/vant/dist/image/index",
+    "van-icon":"/static/vant/dist/icon/index",
+    "van-cell-group":"/static/vant/dist/cell-group/index",
+    "van-field":"/static/vant/dist/field/index",
+    "van-switch":"/static/vant/dist/switch/index" 
+  }
+}

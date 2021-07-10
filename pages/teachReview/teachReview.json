@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "审核评阅",
+  "usingComponents": {
+    "van-notice-bar" : "/static/vant/dist/notice-bar/index",
+    "van-icon": "/static/vant/dist/icon/index"
+  }
+}

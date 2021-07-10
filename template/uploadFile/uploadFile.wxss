@@ -1,0 +1,76 @@
+/* template/uploadFile/uploadFile.wxss.wxss */
+.Card{
+  margin: 40rpx;
+  background-color: #fff;
+  border: 1rpx solid #dddee1 ;
+  border-radius: 10rpx;
+  padding: 20rpx;
+}
+.cardHead{
+  font-size: 34rpx;
+  color: #1c2438;
+  border-bottom: 1rpx solid #e9eaec;
+  padding-bottom: 10rpx;
+}
+.fileContent{
+  font-size: 30rpx;
+  color: #80848f;
+  padding-top: 20rpx;
+}
+.contentItem{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.check{
+  color:#07C160;
+}
+.fileHead{
+  display: flex;
+  font-size: 34rpx;
+  color: #1c2438;
+  border-bottom: 1rpx solid #e9eaec;
+  padding-bottom: 10rpx;
+}
+.head{
+  flex:1;
+  margin-left: 10rpx;
+}
+.cardFileItem{
+  display: flex;
+  margin: 10rpx 0;
+}
+.footerContent{
+  flex:1;
+  
+}
+.uploadBtn{
+  width: 400rpx!important;
+  height: 60rpx;
+  line-height: 60rpx!important;
+  padding: 0!important;
+  text-align: center;
+  background-color: #07C160;
+  color: #ffffff;
+  font-size: 24rpx!important;
+  font-weight: 0!important;
+  margin-top: 40rpx;
+}
+.stateDis{
+  display: flex;
+}
+.stateItem{
+  border-bottom: 1rpx solid #e9eaec;
+  margin-bottom: 30rpx;
+  padding-bottom: 10rpx;
+}
+.secondTitle{
+  color: #495060;
+}
+.text{
+  text-indent: 40rpx;
+}
+.file{
+  color: #409EFF;
+}
+

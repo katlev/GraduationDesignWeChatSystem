@@ -1,0 +1,19 @@
+<!--template/uploadFile/uploadFile.wxml.wxml-->
+<template name="uploadFile">
+  <view class="Card">
+    <view class="cardHead">
+      <van-icon name="star" color="#FFD21E" size="36rpx" />
+      {{perInfo.titleName}}
+    </view>
+    <view class="fileContent">
+      <view class="contentItem">开题教师：{{perInfo.username}}</view>
+      <view class="contentItem">教师职称：{{perInfo.position}}</view>
+      <view class="contentItem">教师邮箱：{{perInfo.email}}</view>
+      <view class="contentItem">所属学院：{{perInfo.college}}</view>
+      <view class="contentItem">
+        选题状态：
+        <text class="check">{{perInfo.state}}</text>
+      </view>
+    </view>
+  </view>
+</template>

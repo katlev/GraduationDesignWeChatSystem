@@ -1,0 +1,2 @@
+/* pages/stuDocUploadOriginal/stuDocUploadOriginal.wxss */
+@import "/template/uploadFile/uploadFile.wxss";

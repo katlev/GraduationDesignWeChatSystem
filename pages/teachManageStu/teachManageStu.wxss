@@ -1,0 +1,39 @@
+/* pages/teachManageStu/teachManageStu.wxss */
+@import '/template/cardTemplate/teachCard.wxss';
+.listItem{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.iconDes{
+  font-size: 24rpx;
+  color:#80848f;
+  text-align: center;
+}
+.fileContent{
+  padding: 10rpx 20rpx;
+}
+.valueItem{
+  display: flex;
+  font-size: 28rpx;
+  color: #495060;
+  border-bottom: 1rpx solid #e9eaec;
+  margin: 30rpx 0;
+  padding-bottom: 12rpx;
+}
+.value{
+  flex: 1;
+  color: #80848f;
+}
+.valueColor{
+  flex: 1;
+  color: #5cadff;
+}
+.valueScore{
+  flex: 1;
+  color: #EE0A24;
+}
+/*.titleScroll{
+  height: calc(100vh - 2rpx);
+}*/
+

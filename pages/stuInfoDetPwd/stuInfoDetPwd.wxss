@@ -1,0 +1,2 @@
+/* pages/stuInfoDetPwd/stuInfoDetPwd.wxss */
+@import '/template/pwdTemplate/pwdTemplate.wxss'

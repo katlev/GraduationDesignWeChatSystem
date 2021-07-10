@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "评阅学生过程文档",
+  "usingComponents": {
+    "i-alert": "/static/dist/alert/index",
+    "i-panel":"/static/dist/panel/index",
+    "van-cell": "/static/vant/dist/cell/index",
+    "van-image":"/static/vant/dist/image/index",
+    "van-icon": "/static/vant/dist/icon/index",
+    "van-empty":"/static/vant/dist/empty/index"
+  }
+}

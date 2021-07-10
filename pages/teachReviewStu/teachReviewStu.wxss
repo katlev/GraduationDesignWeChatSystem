@@ -1,0 +1,9 @@
+/* pages/teachReviewStu/teachReviewStu.wxss */
+.content{
+  margin-left: 20rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+}
+.titleScroll{
+  height: calc(100vh - 160rpx);
+}

@@ -1,0 +1,85 @@
+/* pages/teachIndexForm/teachIndexForm.wxss */
+.kindPicker{
+  display: flex;
+  align-items: center;
+  line-height: 1.4;
+  font-size: 14px;
+  padding:7px 15px;
+  color: #495060;
+  border-bottom: 1rpx solid #e9eaec;
+}
+.kindTitle{
+  color: #495060;
+  min-width: 65px;
+  padding-right:10px;
+}
+.kindContent{
+  flex:1;
+  line-height: 1.6;
+  padding:4px 0;
+  min-height: 22px;
+  height: auto;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kindContentValue{
+  color:#929292;
+  flex:1;
+  line-height: 1.6;
+  padding:4px 0;
+  min-height: 22px;
+  height: auto;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+.kindContent input{
+  cursor: auto;
+  display: block;
+  text-overflow: hidden;
+  white-space: nowrap;
+}
+.titleTextArea{
+  width: 100%;
+  font-size: 14px;
+  color: #495060;
+  padding-bottom: 7px;
+  border-bottom: 1rpx solid #e9eaec;
+}
+.textHead{
+  padding:10px 15px;
+}
+.textarea{
+  display: flex;
+  justify-content: center;
+}
+.textarea textarea{
+  width: 100%;
+  padding: 30rpx;
+  border-top: 1rpx solid #e9eaec;
+  border-radius: 10rpx;
+  /* text-indent:15px; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.confirm-btn{
+  width: 630rpx!important;
+  height: 76rpx;
+  line-height: 76rpx;
+  border-radius: 50rpx;
+  margin: 70rpx 0;
+  background: #07C160;
+  color: #fff;
+  font-size: 32rpx;
+  padding: 0;
+}
+.confirm-btn:active{
+  background-color: #07B160;
+}

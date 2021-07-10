@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "毕设成绩录入名单",
+  "usingComponents": {
+    "van-cell":"/static/vant/dist/cell/index",
+    "van-image":"/static/vant/dist/image/index",
+    "van-icon":"/static/vant/dist/icon/index"
+  }
+}

@@ -1,0 +1,46 @@
+<!--pages/teachManageStuFileStart/teachManageStuFileStart.wxml-->
+<import src="/template/cardTemplate/teachCard.wxml" />
+<view>
+    <!--学生名片信息-->
+    <template is="teachCard" data="{{stuInfo}}"></template>
+
+    <!--审核表单-->
+    <view class="Card" style="z-index: 1">
+       <view class="formHead flex">
+           <van-icon name="star" color="#FFD21E" size="36rpx" />
+           <view class="contentFont fileColor " bindtap="openStartFile" >{{startName}}</view>
+       </view>
+
+        <view class="contentFont formContent">   
+            <view class="flex contentItem">
+                <view class="flexPosition">审核通过</view>
+                <view wx:if="{{startCheck == 0}}" hidden="{{startCheck != 0}}">
+                    <van-switch checked="{{ check }}" size="20px" bind:change="onChange" />
+                </view>
+                <view wx:elif="{{startCheck == 1}}">
+                    <van-switch checked="{{true}}" size="20px" disabled />
+                </view>
+                <view wx:elif="{{startCheck == 2}}">
+                    <van-switch checked="{{false}}" size="20px" disabled />
+                </view>
+            </view>
+            <van-cell-group>
+                    <view class="contentItem" wx:if="{{startOpinion != null}}">审核意见：{{startOpinion}}</view>
+                    
+                    <van-field 
+                            value="{{message}}"
+                            type="textarea"
+                            label="审核意见"
+                            placeholder="请输入审核意见"
+                            autosize
+                            bind:change="inputMessage"
+                            wx:else
+                            hidden="{{startOpinion != null}}"
+                    />
+            </van-cell-group>
+        </view>
+    </view>
+
+    <!--提交按钮-->
+    <button hidden="{{startCheck != 0}}" class="confirm-btn" bindtap="submitStartCheck">提交</button>
+</view>

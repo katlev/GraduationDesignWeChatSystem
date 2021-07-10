@@ -1,0 +1,43 @@
+<!--pages/stuDefence/stuDefence.wxml-->
+<import src="/template/tabTemplate/tabTemplate.wxml" />
+<import src="/template/defence/defence.wxml"></import>
+<view>
+  <!-- 搜索框 -->
+  <view>
+    <van-search value="{{searchValue}}" placeholder="请输入姓名搜索" show-action bind:change="handleInput"
+      bind:search="onSearch" bind:cancel="onCancel" />
+  </view>
+  <!-- 教师列表 -->
+  <scroll-view
+    scroll-y
+    class="titleScroll"
+    refresher-enabled
+    refresher-triggered="{{isTriggered}}"
+    bindrefresherrefresh="handleRefresher"
+    bindscrolltolower="handleToLower"
+  >
+    <view wx:if="{{teachList.length == 0}}">
+      <van-empty description="暂无数据" />
+    </view>
+    <view wx:else style="margin-bottom:105rpx">
+      <van-cell-group>
+        <van-cell wx:for="{{teachList}}" wx:key="index" is-link center link-type="navigateTo"
+          url="/pages/stuContactDetail/stuContactDetail?userId={{item.userId}}" id="{{item.userId}}"
+          bindtap="clickCell">
+          <view slot="title" class="flex">
+            <van-image round width="80rpx" height="80rpx" fit="cover"
+              src="{{item.avatar ? item.avatar : '/static/images/missing-face.png'}}"></van-image>
+            <view class="flexMiddle content">
+              <view>{{item.usernum}} {{item.username}}</view>
+              <text class="describleInfo">{{item.position}} {{item.college}}</text>
+            </view>
+            <van-icon name="arrow" size="36rpx" />
+          </view>
+        </van-cell>
+      </van-cell-group>
+    </view>
+  </scroll-view>
+</view>
+
+
+<template is="tabBar" data="{{tabBar}}" />

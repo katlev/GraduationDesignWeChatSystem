@@ -1,0 +1,202 @@
+<!--pages/stuDocument/stuDocument.wxml-->
+<import src="/template/tabTemplate/tabTemplate.wxml" />
+<view class="files">
+  <!-- 标签页 -->
+  <i-tabs current="{{current}}" bindchange="handleChange">
+    <i-tab key="tab1" title="我的选题"></i-tab>
+    <i-tab key="tab2" title="文档提交"></i-tab>
+  </i-tabs>
+
+  <!-- 标签页内容 -->
+  <view>
+    <!-- 标签页1 -->
+    <view wx:if="{{current === 'tab1'}}">
+       <!-- 标签页1空状态 -->
+      <view wx:if="{{perTitle === null}}">
+        <van-empty description="暂无选题信息,请先去选题" />
+      </view>
+      <!-- 标签页1内容 -->
+      <view wx:else class="Card">
+        <view class="cardHead">
+          <van-icon name="star" color="#FFD21E" size="36rpx" />
+          {{perTitle.titleName}}
+        </view>
+        <view class="cardContent">
+          <view class="contentItem">题目类型：{{perTitle.titleKind}}</view>
+          <view class="contentItem">题目来源：{{perTitle.titleSource}}</view>
+          <view class="contentItem">选择模式：{{perTitle.titleModel}}</view>
+          <view class="contentItem">可选专业：{{perTitle.titleMajor}}</view>
+          <view class="contentItem">指导教师：{{perTitle.username}}</view>
+          <view class="contentItem">教师职称：{{perTitle.position}}</view>
+          <view class="contentItem">教师邮箱：{{perTitle.email}}</view>
+          <view class="contentItem">所属学院：{{perTitle.college}}</view>
+          <view class="cancel">
+              <view class="cancelLeft">
+                选题状态：
+                <text class="check">{{perTitle.state}}</text>
+              </view>
+              <view wx:if="{{perTitle.state == '待确认'}}" class="cancelRight" bindtap="cancelTitle">取消选择</view>
+          </view>
+        </view>
+        <view class="cardFooter">
+          <view>任务书详情：</view>
+          <view class="footerContent">
+            <view wx:if="{{taskFile === ''}}">任务书暂未上传</view>
+            <view wx:elif="{{taskFile === null}}">任务书暂未上传</view>
+            <view wx:else class="taskName" bindtap="readtaskFile">{{taskFile}}</view>
+          </view>
+        </view>
+        <view class="cardFooter">
+          <view>任务书审核状态：</view>
+          <view wx:if="{{taskCheck == null}}">任务书暂未上传</view>
+          <view wx:if="{{taskCheck == 0}}" class="check">待审核</view>
+          <view wx:if="{{taskCheck == 1}}" class="check">审核通过</view>
+          <view wx:if="{{taskCheck == 2}}" class="check">审核不通过</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 标签页2 -->
+    <scroll-view 
+      wx:if="{{current === 'tab2'}}"
+      scroll-y
+      class="titleScroll"
+      refresher-enabled
+      refresher-triggered="{{isTriggered}}"
+      bindrefresherrefresh="handleRefresher"
+    >
+
+      <!-- 标签页2空状态 -->
+      <view wx:if="{{perTitle === null}}">
+        <van-empty description="暂无选题信息,请先去选题" />
+      </view>
+
+      <!-- 标签页2内容 -->
+      <view wx:else>
+        <!-- 题目卡片 -->
+        <view class="Card">
+          <view class="cardHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            {{perTitle.titleName}}
+          </view>
+          <view class="fileContent">
+            <view class="contentItem">题目类型：{{perTitle.titleKind}}</view>
+            <view class="contentItem">题目来源：{{perTitle.titleSource}}</view>
+            <view class="contentItem">选择模式：{{perTitle.titleModel}}</view>
+            <view class="contentItem">可选专业：{{perTitle.titleMajor}}</view>
+            <view class="contentItem">指导教师：{{perTitle.username}}</view>
+            <view class="contentItem">教师职称：{{perTitle.position}}</view>
+            <view class="contentItem">教师邮箱：{{perTitle.email}}</view>
+            <view class="contentItem">所属学院：{{perTitle.college}}</view>
+            <view class="contentItem">
+              选题状态：
+              <text class="check">{{perTitle.state}}</text>
+            </view>
+          </view>
+        </view>
+        <!-- 文件上传 -->
+        <view class="Card" style="margin-bottom:140rpx">
+          <view class="cardHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            过程文档提交
+          </view>
+          <view class="fileContent">
+            <!-- 开题报告 -->
+            <view class="cardFileItem">
+              <view>开题报告：</view>
+              <view class="footerContent">
+                <view wx:if="{{startFile === ''}}">暂未提交</view>
+                <view wx:elif="{{startFile === null}}">暂未提交</view>
+                <view wx:else class="taskName" bindtap="readStartFile">
+                  {{startFile}}
+                </view>
+              </view>
+              <button class="uploadBtn" bindtap="startFileUpload">上传</button>
+            </view>
+            <!-- 中期检查 -->
+            <view class="cardFileItem">
+              <view>中期检查：</view>
+              <view class="footerContent">
+                <view wx:if="{{middleFile === ''}}">暂未提交</view>
+                <view wx:elif="{{middleFile === null}}">暂未提交</view>
+                <view wx:else class="taskName" bindtap="readMiddleFile">{{middleFile}}</view>
+              </view>
+              <button class="uploadBtn" bindtap="middleFileUpload">上传</button>
+              <!-- <view wx:if="{{middleCheck == true}}" class="fileState">已审核</view> -->
+            </view>
+            <!-- 进度计划 -->
+            <view class="cardFileItem">
+              <view>进度计划：</view>
+              <view class="footerContent">
+                <view wx:if="{{planStart === ''}}">暂未提交</view>
+                <view wx:elif="{{planStart === null}}">暂未提交</view>
+                <view wx:else class="taskName">{{planStart}}—{{planEnd}}</view>
+              </view>
+              <button class="uploadBtn" bindtap="planFileUpload">添加</button>
+              <!-- <view wx:if="{{planCheck == true}}" class="fileState">已审核</view> -->
+            </view>
+            <!-- 指导记录 -->
+            <view class="cardFileItem">
+              <view>指导记录：</view>
+              <view class="footerContent">
+                <view wx:if="{{guidanceDate === ''}}">暂未提交</view>
+                <view wx:elif="{{guidanceDate === null}}">暂未提交</view>
+                <view wx:else class="taskName">{{guidanceDate}}</view>
+              </view>
+              <button class="uploadBtn" bindtap="guidanceFileUpload">添加</button>
+              <!-- <view wx:if="{{guidanceCheck == true}}" class="fileState">已审核</view> -->
+            </view>
+            <!-- 外文译文 -->
+            <view class="cardFileItem">
+              <view>外文译文：</view>
+              <view class="footerContent">
+                <view wx:if="{{translationFile === ''}}">暂未提交</view>
+                <view wx:elif="{{translationFile === null}}">暂未提交</view>
+                <view wx:else class="taskName" bindtap="readTranslationFile">{{translationFile}}</view>
+              </view>
+              <button class="uploadBtn" bindtap="translationFileUpload">上传</button>
+              <!-- <view wx:if="{{translationCheck == true}}" class="fileState">已审核</view> -->
+            </view>
+            <!-- 外文原文 -->
+            <view class="cardFileItem">
+              <view>外文原文：</view>
+              <view class="footerContent">
+                <view wx:if="{{originalFile === ''}}">暂未提交</view>
+                <view wx:elif="{{originalFile === null}}">暂未提交</view>
+                <view wx:else class="taskName" bindtap="readOriginalFile">{{originalFile}}</view>
+              </view>
+              <button class="uploadBtn" bindtap="originalFileUpload">上传</button>
+              <!-- <view wx:if="{{originalCheck == true}}" class="fileState">已审核</view> -->
+            </view>
+            <!-- 文献综述 -->
+            <view class="cardFileItem">
+              <view>文献综述：</view>
+              <view class="footerContent">
+                <view wx:if="{{literatureFile === ''}}">暂未提交</view>
+                <view wx:elif="{{literatureFile === null}}">暂未提交</view>
+                <view wx:else class="taskName" bindtap="readLiteratureFile">{{literatureFile}}</view>
+              </view>
+              <button class="uploadBtn" bindtap="literatureFileUpload">上传</button>
+              <!-- <view wx:if="{{literatureCheck == true}}" class="fileState">已审核</view> -->
+            </view>
+            <!-- 毕业论文 -->
+            <view class="cardFileItem">
+              <view>毕业论文：</view>
+              <view class="footerContent">
+                <view wx:if="{{thesisFile === ''}}">暂未提交</view>
+                <view wx:elif="{{thesisFile === null}}">暂未提交</view>
+                <view wx:else class="taskName" bindtap="readThesisFile">{{thesisFile}}</view>
+              </view>
+              <button class="uploadBtn" bindtap="thesisFilePath">上传</button>
+              <!-- <view wx:if="{{thesisCheck == true}}" class="fileState">已审核</view> -->
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </scroll-view>
+
+  </view>
+</view>
+
+<template is="tabBar" data="{{tabBar}}" />

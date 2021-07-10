@@ -1,0 +1,11 @@
+<!--pages/stuInfoOpen/stuInfoOpen.wxml-->
+<import src="/template/defence/defence.wxml"></import>
+
+<view>
+  <view wx:if="{{defenceId === null}}">
+    <van-empty description="暂未录入开题答辩信息" />
+  </view>
+  <view wx:else>
+    <template is="defence" data="{{item}}"></template>
+  </view>
+</view>

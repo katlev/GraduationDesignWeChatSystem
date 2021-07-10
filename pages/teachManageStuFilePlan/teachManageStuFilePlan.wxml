@@ -1,0 +1,29 @@
+<!--pages/teachManageStuFilePlan/teachManageStuFilePlan.wxml-->
+<import src='/template/cardTemplate/teachCard.wxml' />
+<view>
+    <!--学生名片信息-->
+    <template is='teachCard' data="{{stuInfo}}"></template>
+
+    <!--文件内容-->
+    <view class="Card padding">
+        <view class="fileHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            <view class="head">进度计划记录</view>
+        </view>
+        <view class="fileContent">
+            <!-- 开题报告 -->
+            <view class="cardFileItem" wx:for="{{planList}}" wx:key="index" bindtap="toPlanCheck" id="{{item.planId}}">
+                <view wx:if="{{item.planStart == null}}">暂无记录</view>
+                <view wx:else class="flex">
+                    <van-icon name="medal" color="#1989FA" size="34rpx" />
+                    <view class="footerContent">
+                        <text>{{item.planStart}} - {{item.planEnd}}</text>
+                        <text wx:if="{{item.planCheck == 0}}" class="waitCheck" >(待审核)</text>
+                        <text wx:else class="waitCheck" >(已审核)</text>
+                    </view>
+                    <van-icon name="arrow" />
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

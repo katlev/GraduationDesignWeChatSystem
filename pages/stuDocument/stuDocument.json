@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "文档管理",
+  "usingComponents": {
+    "i-tabs":"/static/dist/tabs/index",
+    "i-tab":"/static/dist/tab/index",
+    "van-icon":"/static/vant/dist/icon/index",
+    "van-empty":"/static/vant/dist/empty/index"
+  }
+}

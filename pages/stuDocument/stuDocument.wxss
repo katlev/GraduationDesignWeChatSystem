@@ -1,0 +1,96 @@
+/* pages/stuDocument/stuDocument.wxss */
+.Card{
+  margin: 40rpx;
+  background-color: #fff;
+  border: 1rpx solid #dddee1 ;
+  border-radius: 10rpx;
+  padding: 20rpx;
+}
+.cardHead{
+  font-size: 34rpx;
+  color: #1c2438;
+  border-bottom: 1rpx solid #e9eaec;
+  padding-bottom: 10rpx;
+}
+.cardContent{
+  font-size: 30rpx;
+  color: #80848f;
+  padding-top: 20rpx;
+  border-bottom: 1rpx solid #e9eaec;
+}
+.fileContent{
+  font-size: 30rpx;
+  color: #80848f;
+  padding-top: 30rpx;
+  
+}
+.contentItem{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom: 20rpx;
+}
+.cardFileItem{
+  display: flex;
+  border-bottom: 1rpx solid #e9eaec;
+  margin-bottom: 30rpx;
+  padding-bottom: 10rpx;
+}
+.cardFooter{
+  display: flex;
+  font-size: 30rpx;
+  color: #80848f;
+  padding-top: 20rpx;
+}
+.footerContent{
+  flex: 1;
+}
+.taskName{
+  color: #5cadff;
+  /* max-width: 400rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+}
+.uploadBtn{
+  width: 80rpx!important;
+  height: 50rpx;
+  line-height: 50rpx!important;
+  padding: 0!important;
+  text-align: center;
+  background-color: #07C160;
+  color: #ffffff;
+  font-size: 24rpx!important;
+  font-weight: 0!important;
+}
+.uploadBtn :active{
+  background-color: #07B160;
+}
+.check{
+  color:#07C160; 
+}
+.cancel{
+  display: flex;
+  padding-bottom: 20rpx;
+}
+.cancelLeft{
+  flex:1;
+}
+.cancelRight{
+  margin-right: 20rpx;
+  font-size: 24rpx;
+  padding: 8rpx;
+  color: #fff;
+  background-color: #07C160;
+  border-radius: 5rpx;
+}
+.cancelRight :active{
+  background-color: #07B160;
+}
+.fileState{
+  color: #EE0A24;
+  font-size: 28rpx;
+}
+.titleScroll{
+  height: calc(100vh);
+}

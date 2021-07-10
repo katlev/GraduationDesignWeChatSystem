@@ -1,0 +1,10 @@
+.content{
+  padding:30rpx;
+  font-size: 30rpx;
+  color:#495060;
+}
+.state{
+  padding:30rpx;
+  font-size: 30rpx;
+  color:#07C160; 
+}

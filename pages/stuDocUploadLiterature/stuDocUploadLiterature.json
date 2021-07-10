@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "文献综述报告上传",
+  "usingComponents": {
+    "van-icon":"/static/vant/dist/icon/index"
+  }
+}

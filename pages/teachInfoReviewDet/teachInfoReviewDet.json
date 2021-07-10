@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "留言详情",
+  "usingComponents": {
+    "van-image":"/static/vant/dist/image/index",
+    "van-icon":"/static/vant/dist/icon/index"
+  }
+}

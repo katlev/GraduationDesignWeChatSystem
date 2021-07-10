@@ -1,0 +1,85 @@
+<!--pages/teachManageStu/teachManageStu.wxml-->
+<import src="/template/cardTemplate/teachCard.wxml" />
+<scroll-view
+   scroll-y
+   class="titleScroll"
+   refresher-enabled
+   refresher-triggered="{{isTriggered}}"
+   bindrefresherrefresh="handleRefresher"
+>
+  <!-- 学生名片信息 -->
+  <template is="teachCard" data="{{stuInfo}}" />
+  
+
+  <!-- 图标选项 -->
+  <view class=" listItem">
+    <view bindtap="taskUpload">
+      <van-image width="120rpx" height="120rpx" src="/static/images/upload.png" />
+      <view class="iconDes">任务书上传</view>
+    </view>
+    <view bindtap="fileRead">
+      <van-image width="120rpx" height="120rpx" src="/static/images/file.png" />
+      <view class="iconDes">文档审核</view>
+    </view>
+    <view bindtap="scoreEdit">
+      <van-image width="120rpx" height="120rpx" src="/static/images/edit.png" />
+      <view class="iconDes">成绩录入</view>
+    </view>
+  </view>
+
+  <!-- 学生毕设过程信息 -->
+  <view class="Card fileContent">
+    <view class="valueItem">
+      <view>任务书：</view>
+      <view class="value" wx:if="{{taskName == null}}">未上传</view>
+      <view class="valueColor" bindtap="openTaskFile" wx:else>{{taskName}}</view>
+    </view>
+    <view class="valueItem">
+      <view>开题报告：</view>
+      <view class="value" wx:if="{{startName == null}}">未提交</view>
+      <view class="valueColor" bindtap="openStartFile" wx:else>
+        {{startName}}
+      </view>
+    </view>
+    <view class="valueItem">
+      <view>中期检查：</view>
+      <view class="value" wx:if="{{middleName == null}}">未提交</view>
+      <view class="valueColor" bindtap="openMiddleFile" wx:else>{{middleName}}</view>
+    </view>
+    <view class="valueItem">
+      <view>进度计划：</view>
+      <view class="value" wx:if="{{planStart == null}}">未提交</view>
+      <view class="valueColor" wx:else>{{planStart}}——{{planEnd}}</view>
+    </view>
+    <view class="valueItem">
+      <view>指导记录：</view>
+      <view class="value" wx:if="{{guidanceDate == null}}">未提交</view>
+      <view class="valueColor" wx:else>{{guidanceDate}}</view>
+    </view>
+    <view class="valueItem">
+      <view>外文译文：</view>
+      <view class="value" wx:if="{{translationName == null}}">未提交</view>
+      <view class="valueColor" bindtap="openTranslationFile" wx:else>{{translationName}}</view>
+    </view>
+    <view class="valueItem">
+      <view>外文原件：</view>
+      <view class="value" wx:if="{{originalName == null}}">未提交</view>
+      <view class="valueColor" bindtap="openOriginalFile" wx:else>{{originalName}}</view>
+    </view>
+    <view class="valueItem">
+      <view>文献综述：</view>
+      <view class="value" wx:if="{{literatureName == null}}">未提交</view>
+      <view class="valueColor" bindtap="openLiteratureFile" wx:else>{{literatureName}}</view>
+    </view>
+    <view class="valueItem">
+      <view>毕业论文：</view>
+      <view class="value" wx:if="{{thesisName == null}}">未提交</view>
+      <view class="valueColor" bindtap="openThesisFile" wx:else>{{thesisName}}</view>
+    </view>
+    <view class="valueItem">
+      <view>指导成绩：</view>
+      <view class="value" wx:if="{{guidanceScore == null}}">等待录入</view>
+      <view class="valueScore" wx:else>{{guidanceScore}}分</view>
+    </view>
+  </view>
+</scroll-view>

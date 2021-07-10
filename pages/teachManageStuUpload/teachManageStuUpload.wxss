@@ -1,0 +1,18 @@
+/* pages/teachManageStuUpload/teachManageStuUpload.wxss */
+@import '/template/cardTemplate/teachCard.wxss';
+.cardItem{
+  padding-top: 10rpx;
+}
+.taskList{
+  display: flex;
+  margin-top: 10rpx;
+}
+.taskValue{
+  flex: 1;
+}
+.fileName{
+  color: #5cadff;
+}
+.mini-btn{
+  font-size: 26rpx;
+}

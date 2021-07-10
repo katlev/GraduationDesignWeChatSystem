@@ -1,0 +1,28 @@
+<!--pages/teachReviewStuFileScore/teachReviewStuFileScore.wxml-->
+<import src="/template/cardTemplate/teachCard.wxml"></import>
+<view>
+
+  <template is="teachCard" data="{{stuInfo}}"></template>
+
+  <!-- 录入评阅成绩 -->
+  <view class="Card content">
+    <view class="scoreItem">
+        <view>评阅成绩：</view>
+        <input type="text" placeholder="请输入过程文档评阅分数" class="socreInput" id="readScore" bindinput="handleChange" />
+    </view>
+    <view class="inputGuidance">
+        <view>评语：</view>
+        <textarea class="guidanceValue" placeholder="请对该学生提交的过程文档进行评价" cols="10" rows="4" id="readValue" bindinput="handleChange" ></textarea>
+    </view>
+    <view class="scoreItem">
+      <view>电子签名：</view>
+      <view class="flexMiddle borderBottom">
+        <van-image wx:if="{{imgUrl != ''}}" width="370rpx" height="50rpx" src="{{imgUrl}}" />
+      </view>
+      <button class="mini-btn" type="primary" size="mini" bindtap="getSignature">浏览</button>
+    </view>
+  </view>
+
+   <!-- 提交按钮 -->
+   <button class="submitBtn" bindtap="submitScore" bindtap="submitBtn">提交</button>
+</view>

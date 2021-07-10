@@ -1,0 +1,2 @@
+/* pages/teachIndexDetail/teachIndexDetail.wxss */
+@import '/template/titleDetail/titleDetail.wxss';

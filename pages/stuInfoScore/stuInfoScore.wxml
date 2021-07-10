@@ -1,0 +1,66 @@
+<!--pages/stuInfoScore/stuInfoScore.wxml-->
+<view>
+    <i-alert show-icon desc>
+      成绩分配：
+      <view slot="desc">指导成绩:40%；评阅成绩:0；答辩成绩:60%。</view>
+    </i-alert>
+
+    <view wx:if="{{score.userId}}">
+      <view class="cardList">
+      <i-card title="导师指导成绩" extra="{{score.guidanceEditor}}">
+        <view slot="content">
+          分数：
+          <text wx:if="{{score.guidanceScore == null}}">指导分数暂未录入</text>
+          <text wx:else>{{score.guidanceScore}}分</text>
+        </view>
+        <view slot="footer">
+            评语：
+            <text wx:if="{{score.guidancdValue == null}}">还没有评语哦</text>
+            <text wx:else>{{score.guidancdValue}}</text>
+          </view>
+      </i-card>
+      </view>
+      
+
+      <view class="cardList">
+        <i-card title="评阅成绩" extra="{{score.readEditor}}">
+          <view slot="content">
+            分数：<text wx:if="{{score.readScore == null}}">评阅分数暂未录入</text>
+            <text wx:else>{{score.readScore}}分</text>
+          </view>
+          <view slot="footer">
+            评语：
+            <text wx:if="{{score.readValue == null}}">还没有评语哦</text>
+            <text wx:else>{{score.readValue}}</text>
+          </view>
+        </i-card>
+      </view>
+
+      <view class="cardList">
+        <i-card title="答辩成绩" extra="{{score.defenceEditor}}">
+          <view slot="content">
+            分数：<text wx:if="{{score.defenceScore == null}}">答辩分数暂未录入</text>
+            <text wx:else>{{score.defenceScore}}分</text>
+          </view>
+          <view slot="footer">
+            评语：
+            <text wx:if="{{score.defenceValue == null}}">还没有评语哦</text>
+            <text wx:else>{{score.defenceValue}}</text>
+          </view>
+        </i-card>
+      </view>
+
+      <view class="cardBottom">
+        <i-card title="总成绩">
+          <view slot="content" wx:if="{{score.total == null}}">暂时还没有出总成绩哦</view>
+          <view wx:else slot="content">分数：{{score.total}}分</view>
+        </i-card>
+      </view>
+
+    </view> 
+
+    <view class="cardList" wx:else>
+      <van-empty description="教师还未录入成绩！"></van-empty>
+    </view>
+</view>
+

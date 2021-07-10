@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "过程文档查阅",
+  "usingComponents": {
+    "van-image": "/static/vant/dist/image/index",
+    "van-collapse":"/static/vant/dist/collapse/index",
+    "van-collapse-item":"/static/vant/dist/collapse-item/index"
+  }
+}

@@ -1,0 +1,28 @@
+<!--pages/teachInfoDesignScoreInput/teachInfoDesignScoreInput.wxml-->
+<import src="/template/cardTemplate/teachCard.wxml"></import>
+<view>
+  <!-- 学生名片信息 -->
+  <template is="teachCard" data="{{stuInfo}}"></template>
+
+  <!-- 录入毕设答辩成绩 -->
+  <view class="Card content">
+    <view class="scoreItem">
+        <view>毕设答辩成绩：</view>
+        <input type="text" placeholder="请输入指导分数" class="socreInput" id="defenceScore" bindinput="handleChange" />
+    </view>
+    <view class="inputGuidance">
+        <view>评语：</view>
+        <textarea class="guidanceValue" placeholder="请对该学生的平时表现进行评价" cols="10" rows="4" id="defenceValue" bindinput="handleChange"></textarea>
+    </view>
+    <view class="scoreItem">
+      <view>电子签名：</view>
+      <view class="flexMiddle borderBottom">
+        <van-image wx:if="{{imgUrl != ''}}" width="370rpx" height="50rpx" src="{{imgUrl}}" />
+      </view>
+      <button class="mini-btn" type="primary" size="mini" bindtap="getSignature">浏览</button>
+    </view>
+  </view>
+
+  <!-- 提交按钮 -->
+  <button class="submitBtn" bindtap="submitScore">提交</button>
+</view>

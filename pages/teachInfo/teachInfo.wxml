@@ -1,0 +1,49 @@
+<!--pages/teachInfo/teachInfo.wxml-->
+<!-- 引入tabbar模板 -->
+<import src="/template/tabTemplate/tabTemplate.wxml"/>
+<view>
+    <view class="perInfoHead">
+        <!-- <image src="/static/images/missing-face.png"></image> -->
+        <van-image  bindtap="changeAvatar" width="200rpx" height="200rpx" round fit="cover" src="{{imgSrc? imgSrc: '/static/images/missing-face.png'}}"/>
+        <text>{{teachNum}}  {{teachName}}</text>
+        <text class="identity">{{teachPosition}}</text>
+    </view>
+
+    <view class="perList">
+        <view class="perListItem" bindtap="toTeachDetail">
+            <text class="iconfont icon-mingpian"></text>
+            <text>个人信息</text>
+            <text class="iconfont icon-jf-row enter"></text>
+        </view>
+        <view class="perListItem" bindtap="toTeachReview">
+            <text class="iconfont icon-liuyan"></text>
+            <text>我的留言</text>
+            <text class="iconfont icon-jf-row enter"></text>
+        </view>
+        <view class="perListItem" bindtap="toOpenDefence">
+            <text class="iconfont icon-xing"></text>
+            <text>开题答辩</text>
+            <text class="iconfont icon-jf-row enter"></text>
+        </view>
+        <view class="perListItem" bindtap="toDesignDefence">
+            <text class="iconfont icon-design"></text>
+            <text>毕设答辩</text>
+            <text class="iconfont icon-jf-row enter"></text>
+        </view>
+        <view class="perListItem" bindtap="toTeachTitles">
+            <text class="iconfont icon-jilu1"></text>
+            <text>开题记录</text>
+            <text class="iconfont icon-jf-row enter"></text>
+        </view>
+        <view class="perListItem" bindtap="toTeachPwd">
+            <text class="iconfont icon-xiugaimima1"></text>
+            <text>修改密码</text>
+            <text class="iconfont icon-jf-row enter"></text>
+        </view>
+        <view class="out" bindtap="signOut">
+            <text>退出</text>
+        </view>
+    </view>
+</view>
+<!-- tabbar -->
+<template is="tabBar" data="{{tabBar}}" />

@@ -1,0 +1,30 @@
+<!--pages/teachInfoReview/teachInfoReview.wxml-->
+<scroll-view
+    scroll-y
+    class="titleScroll"
+    refresher-enabled
+    refresher-triggered="{{isTriggered}}"
+    bindrefresherrefresh="handleRefresher"
+    bindscrolltolower="handleToLower"
+>
+  <view wx:if="{{stuList.length == 0}}">
+    <van-empty description="还没有任何留言哦" />
+  </view>
+  <view wx:else>
+    <van-swipe-cell right-width="{{ 65 }}" wx:for="{{stuList}}" wx:key="index">
+      <van-cell-group>
+        <van-cell is-link center link-type="navigateTo" url="/pages/teachInfoReviewDet/teachInfoReviewDet?userId={{item.userId}}" id="{{item.userId}}" bindtap="clickCell">
+          <view slot="title" class="flex">
+            <van-image round width="80rpx" height="80rpx" fit="cover" src="{{item.avatar ? item.avatar : '/static/images/missing-face.png'}}"></van-image>
+            <view class="flexMiddle content">
+              <view>{{item.usernum}} {{item.username}}</view>
+              <text class="describleInfo">{{item.major}}</text>
+            </view>
+            <van-icon name="arrow" size="36rpx" />
+          </view>
+        </van-cell>
+      </van-cell-group>
+      <view slot="right" class="deleteBtn" bindtap="deleteReview" id="{{item.userId}}">删除</view>
+    </van-swipe-cell>
+  </view>
+</scroll-view>

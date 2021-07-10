@@ -1,0 +1,65 @@
+<!--pages/stuDocUploadPlanForm/stuDocUploadPlanForm.wxml-->
+<view>
+    <!--警告窗-->
+    <view>
+        <i-alert>
+            添加进度计划须知
+            <view slot="desc">
+                请看清楚填写格式，认真填写相关内容！
+            </view>
+        </i-alert>
+    </view>
+
+    <!--添加表单-->
+    <view>
+       <i-panel title="添加内容">
+           <!-- 开始日期选择器 -->
+           <picker bindchange="startDatePicker" mode="date" value="{{startDate}}" start="2020-01-01" end="2025-12-31">
+               <view class="kindPicker">
+                   <view class="kindTitle">开始日期：</view>
+                   <view class="kindContent">{{startDate}}</view>
+                   <view class="iconfont icon-jf-row"></view>
+               </view>
+           </picker>
+
+           <!-- 结束日期选择器 -->
+           <picker bindchange="endDatePicker" mode="date" value="{{endDate}}" start="2020-01-01" end="2025-12-31">
+               <view class="kindPicker">
+                   <view class="kindTitle">结束日期：</view>
+                   <view class="kindContent">{{endDate}}</view>
+                   <view class="iconfont icon-jf-row"></view>
+               </view>
+           </picker>
+
+           <!--计划完成内容-->
+           <view class="titleTextArea">
+               <view class="textHead">计划完成内容：</view>
+               <view class="textarea">
+                   <textarea style="height: 200rpx" placeholder="请说明本时间段计划完成内容" bindinput="handleValue" id="planValue"></textarea>
+               </view>
+           </view>
+
+           <!--实际完成内容-->
+           <view class="titleTextArea">
+               <view class="textHead">实际完成内容：</view>
+               <view class="textarea">
+                   <textarea style="height: 200rpx" placeholder="请说明本时间段实际完成内容" bindinput="handleValue" id="actualValue"></textarea>
+               </view>
+           </view>
+
+           <!--添加附件-->
+           <view class="titleTextArea">
+               <view class="textHead uploadFile">
+                   <view class="uploadHead">添加附件：</view>
+                   <button class="uploadBtn" bindtap="uploadPlanFile">浏览</button>
+               </view>
+               <view class="textHead">
+                   <view wx:if="{{planName == ''}}" class="fileExplain">支持附件格式为doc，docx，pdf，wps，rar，zip</view>
+                   <view wx:else class="fileExplain file">{{planName}}</view>
+               </view>
+           </view>
+       </i-panel>
+        <button class="addBtn" bindtap="addPlanItem">添加</button>
+    </view>
+
+</view>

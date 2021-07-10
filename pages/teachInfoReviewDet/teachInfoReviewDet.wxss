@@ -1,0 +1,56 @@
+/* pages/teachinfoReviewDet/teachInfoReviewDet.wxss */
+@import '/template/cardTemplate/teachCard.wxss';
+.secondTitle{
+  color:#1c2438;
+  margin-left:10rpx;
+}
+
+/* 气泡框 */
+.bubble{
+  position: relative;
+  margin:20rpx 40rpx;
+  padding: 20rpx;
+  background-color: #79BBFF;
+  color: #ffffff;
+  border-radius: 10rpx;
+}
+.bubble::after{
+  content: '';
+  width: 0;
+  height: 0;
+  display: block;
+  border-style: solid;
+  border-width: 20rpx;
+  border-color: transparent #79BBFF  transparent transparent;
+  position: absolute;
+  z-index: 1;
+  left: -35rpx;
+  top: 30rpx;
+}
+
+.prompt{
+  font-size:28rpx;
+  text-align:right;
+}
+
+.mini-btn{
+  font-size: 28rpx!important;
+  margin-left: 10rpx;
+}
+.reply{
+  color: #bbbec4;
+  font-size: 28rpx;
+}
+.replyInput{
+  border-bottom: 1rpx solid #e9eaec;
+  font-size: 30rpx;
+}
+.fontColor{
+  color: #495060
+}
+.replyInput :hover{
+  border-bottom: 1rpx solid #19be6b;
+}
+.marginButtom{
+  margin-bottom: 30rpx;
+}

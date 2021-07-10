@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "查看开题答辩信息",
+  "usingComponents": {
+    "van-empty":"/static/vant/dist/empty/index",
+    "van-icon":"/static/vant/dist/icon/index"
+  }
+}

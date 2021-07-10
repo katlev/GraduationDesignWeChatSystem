@@ -1,0 +1,30 @@
+.fileContent{
+  font-size: 30rpx;
+  color: #80848f;
+  padding-top: 20rpx;
+}
+
+.check{
+  color:#07C160;
+}
+
+.flexItem{
+  display: flex;
+}
+.cardFileItem{
+  margin: 20rpx 0;
+  border-bottom: 1rpx solid #e9eaec;
+  padding-bottom: 10rpx;
+}
+.secondTitle{
+  color: #495060;
+}
+.text{
+  text-indent: 40rpx;
+}
+
+.cardContent{
+  font-size: 30rpx;
+  color: #80848f;
+  padding: 20rpx;
+}

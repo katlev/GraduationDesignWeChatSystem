@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的选题",
+  "usingComponents": {
+    "van-empty" : "/static/vant/dist/empty/index"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-search":"/static/vant/dist/search/index",
+    "van-empty":"/static/vant/dist/empty/index",
+    "van-cell":"/static/vant/dist/cell/index",
+    "van-cell-group":"/static/vant/dist/cell-group/index",
+    "van-image":"/static/vant/dist/image/index"
+  },
+  "navigationBarTitleText": "联系教师"
+}

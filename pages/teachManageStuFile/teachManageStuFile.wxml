@@ -1,0 +1,120 @@
+<!--pages/teachManageStuFile/teachManageStuFile.wxml-->
+<import src="/template/cardTemplate/teachCard.wxml" />
+<scroll-view
+  scroll-y
+  class="titleScroll"
+  refresher-enabled
+  refresher-triggered="{{isTriggered}}"
+  bindrefresherrefresh="handleRefresher"
+
+>
+  <!-- 学生名片信息 -->
+  <template is="teachCard" data="{{stuInfo}}" />
+  <!-- 文件预览 -->
+  <view class="Card content">
+    <view class="fileItem">
+      <view>开题报告：</view>
+      <view class="fileName">
+        <view wx:if="{{startFile === null}}">暂未提交</view>
+        <view wx:else class="taskTitle" bindtap="openStartFile">
+          {{startFile}}
+          <text wx:if="{{startCheck == 0}}" class="fileState">(待审核)</text>
+          <text wx:else class="fileState">(已审核)</text>
+        </view>
+      </view>
+      <button class="uploadBtn" bindtap="checkStartFile">审核</button>
+      <!-- <view wx:if="{{startCheck == true}}" class="fileState">已审核</view> -->
+    </view>
+    <view class="fileItem">
+      <view>中期检查：</view>
+      <view class="fileName">
+        <view wx:if="{{middleFile === null}}">暂未提交</view>
+        <view wx:else class="taskTitle" bindtap="openMiddleFile">
+          {{middleFile}}
+          <text wx:if="{{middleCheck == 0}}" class="fileState">(待审核)</text>
+          <text wx:else class="fileState">(已审核)</text>
+        </view>
+      </view>
+      <button class="uploadBtn" bindtap="checkMiddleFile">审核</button>
+      <!-- <view wx:if="{{middleCheck == true}}" class="fileState">已审核</view> -->
+    </view>
+    <view class="fileItem">
+      <view>进度计划：</view>
+      <view class="fileName">
+        <view wx:if="{{planStart === null}}">暂未提交</view>
+        <view wx:else class="taskTitle" bindtap="openPlanFile">
+          {{planStart}}—{{planEnd}}
+          <text wx:if="{{planCheck == 0}}" class="fileState">(待审核)</text>
+          <text wx:else class="fileState">(已审核)</text>
+        </view>
+      </view>
+      <button class="uploadBtn" bindtap="checkPlanFile">审核</button>
+      <!-- <view wx:if="{{planCheck == true}}" class="fileState">已审核</view> -->
+    </view>
+    <view class="fileItem">
+      <view>指导记录：</view>
+      <view class="fileName">
+        <view wx:if="{{guidanceDate === null}}">暂未提交</view>
+        <view wx:else class="taskTitle" bindtap="openGuidanceFile">
+          {{guidanceDate}}
+          <text wx:if="{{guidanceCheck == 0}}" class="fileState">(待审核)</text>
+          <text wx:else class="fileState">(已审核)</text>
+        </view>
+      </view>
+      <button class="uploadBtn" bindtap="checkGuidanceFile">审核</button>
+      <!-- <view wx:if="{{guidanceCheck == true}}" class="fileState">已审核</view> -->
+    </view>
+    <view class="fileItem">
+      <view>外文译文：</view>
+      <view class="fileName">
+        <view wx:if="{{translationFile === null}}">暂未提交</view>
+        <view wx:else class="taskTitle" bindtap="openTranslationFile">
+          {{translationFile}}
+          <text wx:if="{{translationCheck == 0}}" class="fileState">(待审核)</text>
+          <text wx:else class="fileState">(已审核)</text>
+        </view>
+      </view>
+      <button class="uploadBtn" bindtap="checkTranslationFile">审核</button>
+      <!-- <view wx:if="{{translationCheck == true}}" class="fileState">已审核</view> -->
+    </view>
+    <view class="fileItem">
+      <view>外文原件：</view>
+      <view class="fileName">
+        <view wx:if="{{originalFile === null}}">暂未提交</view>
+        <view wx:else class="taskTitle" bindtap="openOriginalFile">
+          {{originalFile}}
+          <text wx:if="{{originalCheck == 0}}" class="fileState">(待审核)</text>
+          <text wx:else class="fileState">(已审核)</text>
+        </view>
+      </view>
+      <button class="uploadBtn" bindtap="checkOriginalFile">审核</button>
+      <!-- <view wx:if="{{originalCheck == true}}"  class="fileState">已审核</view> -->
+    </view>
+    <view class="fileItem">
+      <view>文献综述：</view>
+      <view class="fileName">
+        <view wx:if="{{literatureFile === null}}">暂未提交</view>
+        <view wx:else class="taskTitle" bindtap="openLiteratureFile">
+          {{literatureFile}}
+          <text wx:if="{{literatureCheck == 0}}" class="fileState">(待审核)</text>
+          <text wx:else class="fileState">(已审核)</text>
+        </view>
+      </view>
+      <button class="uploadBtn" bindtap="checkLiteratureFile">审核</button>
+      <!-- <view wx:if="{{literatureCheck == true}}" class="fileState">已审核</view> -->
+    </view>
+    <view class="fileItem">
+      <view>毕业论文：</view>
+      <view class="fileName">
+        <view wx:if="{{thesisFile === null}}">暂未提交</view>
+        <view wx:else class="taskTitle" bindtap="openThesisFile">
+          {{thesisFile}}
+          <text wx:if="{{thesisCheck == 0}}" class="fileState">(待审核)</text>
+          <text wx:else class="fileState">(已审核)</text>
+        </view>
+      </view>
+      <button class="uploadBtn" bindtap="checkThesisFile">审核</button>
+      <!-- <view wx:if="{{thesisCheck == true}}" class="fileState">已审核</view> -->
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,41 @@
+.fileBtn{
+  width: 80rpx!important;
+  height: 50rpx;
+  line-height: 50rpx!important;
+  padding: 0!important;
+  text-align: center;
+  background-color: #07C160;
+  color: #ffffff;
+  font-size: 24rpx!important;
+  font-weight: 0!important;
+}
+.cardFileItem{
+  display: flex;
+  margin: 30rpx 0;
+  border-bottom: 1rpx solid #e9eaec;
+  padding-bottom: 10rpx;
+}
+.footerContent{
+  flex:1;
+  margin-left: 10rpx;
+}
+.stateItem{
+  display: flex;
+  border-bottom: 1rpx solid #e9eaec;
+  margin-bottom: 30rpx;
+  padding-bottom: 10rpx;
+}
+.checkItem{
+  border: 1rpx solid #e9eaec;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+.checkHead{
+  border-bottom: 1rpx solid #e9eaec;
+  padding-bottom:10rpx ;
+  display: flex;
+}
+.checkValue{
+  margin-top: 10rpx;
+}

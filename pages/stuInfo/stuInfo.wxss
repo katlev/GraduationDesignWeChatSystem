@@ -1,0 +1,64 @@
+/* pages/stuInfo/stuInfo.wxss */
+.perInfoHead{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height:360rpx;
+ /*  background-color: rgba(144, 237, 144, 0.3); */
+  border-bottom: 1rpx solid #ECECEC;
+  font-size: 30rpx;
+  background-color: #fff;
+  color:#4D4D4D;
+  /* color:#fff; */
+}
+.perInfoHead van-image{
+  width:200rpx;
+  height:200rpx;
+  margin-bottom: 10rpx;
+  border: 2rpx solid #f8f8f9;
+  border-radius: 50%;
+}
+.identity{
+  font-size: 36rpx;
+}
+
+/* 列表 */
+.perList{
+  margin-top: 20rpx;
+}
+.perList .perListItem{
+  position: relative;
+  width:100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  display: flex;
+  border-top:1rpx solid #ECECEC;
+  background-color: #fff;
+  font-size: 32rpx;
+}
+.perListItem:active{
+  background-color: #DDDDDD;
+}
+.perListItem .iconfont{
+  margin:0 20rpx;
+}
+.enter{
+  position: absolute;
+  right: 0;
+}
+.out{
+  width: 100%;
+  height:90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  border-top: 1rpx solid #ECECEC;
+  border-bottom: 1rpx solid #ECECEC;
+  margin-top: 40rpx;
+  margin-bottom: 140rpx;
+  background-color: #fff;
+}
+.out:active{
+  background-color: #EFF0F3;
+}

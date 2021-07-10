@@ -1,0 +1,50 @@
+/* pages/stuInfoDoc/stuInfoDoc.wxss */
+.flex{
+    display: flex;
+}
+.head{
+   padding: 20rpx;
+   color: #1c2438;
+}
+.Card{
+    padding: 20rpx;
+    border: 1rpx solid #dddee1 ;
+    border-radius: 10rpx;
+}
+.CardMargin{
+    margin-bottom: 20rpx;
+}
+.cardHead{
+    color: #1c2438;
+    border-bottom: 1rpx solid #e9eaec;
+    padding-bottom: 10rpx;
+}
+.fileName{
+    margin-left: 10rpx;
+    color: #1989FA;
+}
+.cardContent{
+    margin-top: 10rpx;
+}
+.contentItem{
+    margin-bottom: 10rpx;
+}
+.secondTitle{
+    color: #495060;
+}
+.check{
+    color:#07C160;
+}
+.text{
+    text-indent: 20rpx;
+}
+.fileColor{
+    color: #1989FA;
+}
+.firstFont{
+    font-size: 32rpx;
+}
+.secondFont{
+    font-size: 30rpx;
+}
+

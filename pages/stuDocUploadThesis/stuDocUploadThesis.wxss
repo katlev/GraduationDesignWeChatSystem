@@ -1,0 +1,2 @@
+/* pages/stuDocUploadThesis/stuDocUploadThesis.wxss */
+@import '/template/uploadFile/uploadFile.wxss';

@@ -1,0 +1,66 @@
+<template name="titleDetail">
+  <view>
+    <view>
+        <i-panel title="题目">
+            <view class="content">{{titleDetail.titleName}}</view>
+        </i-panel>
+    </view>
+    <view>
+        <i-panel title="题目类型">
+            <view class="content">{{titleDetail.titleKind}}</view>
+        </i-panel>
+    </view>
+    <view>
+        <i-panel title="来源">
+            <view class="content">{{titleDetail.titleSource}}</view>
+        </i-panel>
+    </view>
+    <view>
+        <i-panel title="模式">
+            <view class="content">{{titleDetail.titleModel}}</view>
+        </i-panel>
+    </view>
+    <view>
+        <i-panel title="可选专业">
+            <view class="content">{{titleDetail.college}}-{{titleDetail.titleMajor}}</view>
+        </i-panel>
+    </view>
+    <view>
+        <i-panel title="开题日期">
+            <view class="content">{{titleDetail.titleYear}}</view>
+        </i-panel>
+    </view>
+    <view>
+        <i-panel title="类型">
+            <view class="content">{{titleDetail.titleType}}</view>
+        </i-panel>
+    </view>
+    <view>
+        <i-panel title="实践中完成">
+            <view class="content">{{titleDetail.titleComplete}}</view>
+        </i-panel>
+    </view>
+    <view>
+        <i-panel title="命题内容和要求">
+            <view class="content">
+                {{titleDetail.titleValue}}
+            </view>
+        </i-panel>
+    </view>
+    <view>
+        <i-panel title="所需条件">
+            <view class="content">{{titleDetail.titleRequire}}</view>
+        </i-panel>
+    </view>
+    <view>
+        <i-panel title="预期成果">
+            <view class="content">{{titleDetail.titleResult}}</view>
+        </i-panel>
+    </view>
+    <view>
+        <i-panel title="审核状态">
+            <view class="state">{{titleDetail.titleState}}</view>
+        </i-panel>  
+    </view>
+  </view>
+</template>

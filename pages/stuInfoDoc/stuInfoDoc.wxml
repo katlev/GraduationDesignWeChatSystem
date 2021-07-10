@@ -1,0 +1,216 @@
+<!--pages/stuInfoDoc/stuInfoDoc.wxml-->
+<view>
+    <view class="head flex">
+        <van-icon name="star" color="#FFD21E" size="36rpx" />
+        <view>过程文档审核情况</view>
+    </view>
+
+    <view>
+        <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+            <!-- 开题报告 -->
+            <van-collapse-item title="开题报告" name="1">
+                <view class="Card" wx:if="{{filesCheck.startName != null}}">
+                    <view class="cardHead flex">
+                        <van-icon name="send-gift" color="#ff9900" size="34rpx" />
+                        <view class="fileName firstFont" bindtap="openStartFile">{{filesCheck.startName}}</view>
+                    </view>
+                    <view class="cardContent secondFont">
+                        <view class="flex contentItem">
+                            <view class="secondTitle">审核状态：</view>
+                            <view wx:if="{{filesCheck.startCheck == 0}}" class="check">等待审核</view>
+                            <view wx:if="{{filesCheck.startCheck == 1}}" class="check">审核通过</view>
+                            <view wx:if="{{filesCheck.startCheck == 2}}" class="check">审核不通过</view>
+                        </view>
+                        <view class="contentItem" wx:if="{{filesCheck.startCheck != 0}}">
+                            <view class="secondTitle">审核意见：</view>
+                            <view wx:if="{{filesCheck.startOpinion == null}}" class="text">暂无意见</view>
+                            <view wx:else class="text">{{filesCheck.startOpinion}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="Card" wx:else>开题报告暂未提交</view>
+            </van-collapse-item>
+            <!-- 中期检查 -->
+            <van-collapse-item title="中期检查报告" name="2">
+                <view wx:if="{{filesCheck.middleName != null}}" class="Card">
+                    <view class="cardHead flex">
+                        <van-icon name="send-gift" color="#ff9900" size="34rpx" />
+                        <view class="fileName firstFont" bindtap="openMiddleFile">{{filesCheck.middleName}}</view>
+                    </view>
+                    <view class="cardContent secondFont">
+                        <view class="flex contentItem">
+                            <view class="secondTitle">审核状态：</view>
+                            <view wx:if="{{filesCheck.middleCheck == 0}}" class="check">等待审核</view>
+                            <view wx:if="{{filesCheck.middleCheck == 1}}" class="check">审核通过</view>
+                            <view wx:if="{{filesCheck.middleCheck == 2}}" class="check">审核不通过</view>
+                        </view>
+                        <view class="contentItem" wx:if="{{filesCheck.middleCheck != 0}}">
+                            <view class="secondTitle">审核意见：</view>
+                            <view wx:if="{{filesCheck.middleOpinion == null}}" class="text">暂无意见</view>
+                            <view wx:else class="text">{{filesCheck.middleOpinion}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view wx:else class="Card">暂未提交中期检查</view>
+            </van-collapse-item>
+            <!-- 进度计划 -->
+            <van-collapse-item title="进度计划" name="3">
+                <view class="Card CardMargin" wx:for="{{plansCheck}}" wx:key="index">
+                    <view wx:if="{{item.planStart != null}}">
+                        <view class="cardHead flex">
+                            <van-icon name="send-gift" color="#ff9900" size="34rpx" />
+                            <view class="secondTitle firstFont" style="margin-left: 10rpx">{{item.planStart}} -
+                                {{item.planEnd}}</view>
+                        </view>
+                        <view class="cardContent secondFont">
+                            <view class="flex contentItem">
+                                <view class="secondTitle">附件：</view>
+                                <view class="fileColor" id="{{item.planPath}}" bindtap="openPlanFile">{{item.planName}}
+                                </view>
+                            </view>
+                            <view class="flex contentItem">
+                                <view class="secondTitle">审核状态：</view>
+                                <view wx:if="{{item.planCheck == 0}}" class="check">等待审核</view>
+                                <view wx:if="{{item.planCheck == 1}}" class="check">审核通过</view>
+                                <view wx:if="{{item.planCheck == 2}}" class="check">审核不通过</view>
+                            </view>
+                            <view class="contentItem" wx:if="{{item.planCheck != 0}}">
+                                <view class="secondTitle">审核意见：</view>
+                                <view wx:if="{{item.planOpinion == null}}" class="text">暂无意见</view>
+                                <view wx:else class="text">{{item.planOpinion}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view wx:else class="Card">暂未提交进度计划</view>
+                </view>
+            </van-collapse-item>
+            <!-- 指导记录 -->
+            <van-collapse-item title="指导记录" name="4">
+                <view class="Card CardMargin" wx:for="{{guidancesCheck}}" wx:key="index">
+                    <view wx:if="{{item.guidanceDate != null}}">
+                        <view class="cardHead flex">
+                            <van-icon name="send-gift" color="#ff9900" size="34rpx" />
+                            <view class="secondTitle firstFont" style="margin-left: 10rpx">
+                                {{item.guidanceDate}}
+                            </view>
+                        </view>
+                        <view class="cardContent secondFont">
+                            <view class="flex contentItem">
+                                <view class="secondTitle">附件：</view>
+                                <view class="fileColor" id="{{item.guidancePath}}" bindtap="openGuidanceFile">
+                                    {{item.guidanceName}}</view>
+                            </view>
+                            <view class="flex contentItem">
+                                <view class="secondTitle">审核状态：</view>
+                                <view wx:if="{{item.guidanceCheck == 0}}" class="check">等待审核</view>
+                                <view wx:if="{{item.guidanceCheck == 1}}" class="check">审核通过</view>
+                                <view wx:if="{{item.guidanceCheck == 2}}" class="check">审核不通过</view>
+                            </view>
+                            <view class="contentItem" wx:if="{{item.guidanceCheck != 0}}">
+                                <view class="secondTitle">审核意见：</view>
+                                <view wx:if="{{item.guidanceOpinion == null}}" class="text">暂无意见</view>
+                                <view wx:else class="text">{{item.guidanceOpinion}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view wx:else class="Card">暂未提交指导记录</view>
+                </view>
+            </van-collapse-item>
+            <!-- 外文译文 -->
+            <van-collapse-item title="外文译文" name="5">
+                <view wx:if="{{filesCheck.translationName != null}}" class="Card">
+                    <view class="cardHead flex">
+                        <van-icon name="send-gift" color="#ff9900" size="34rpx" />
+                        <view class="fileName firstFont" bindtap="openTranslationFile">{{filesCheck.translationName}}
+                        </view>
+                    </view>
+                    <view class="cardContent secondFont">
+                        <view class="flex contentItem">
+                            <view class="secondTitle">审核状态：</view>
+                            <view wx:if="{{filesCheck.translationCheck == 0}}" class="check">等待审核</view>
+                            <view wx:if="{{filesCheck.translationCheck == 1}}" class="check">审核通过</view>
+                            <view wx:if="{{filesCheck.translationCheck == 2}}" class="check">审核不通过</view>
+                        </view>
+                        <view class="contentItem" wx:if="{{filesCheck.translationCheck != 0}}">
+                            <view class="secondTitle">审核意见：</view>
+                            <view wx:if="{{filesCheck.translationOpinion == null}}" class="text">暂无意见</view>
+                            <view wx:else class="text">{{filesCheck.translationOpinion}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view wx:else class="Card">暂未提交 外文译文</view>
+            </van-collapse-item>
+            <!-- 外文原文 -->
+            <van-collapse-item title="外文原文" name="6">
+                <view wx:if="{{filesCheck.originalName != null}}" class="Card">
+                    <view class="cardHead flex">
+                        <van-icon name="send-gift" color="#ff9900" size="34rpx" />
+                        <view class="fileName firstFont" bindtap="openOriginalFile">{{filesCheck.originalName}}</view>
+                    </view>
+                    <view class="cardConten secondFont">
+                        <view class="flex contentItem">
+                            <view class="secondTitle">审核状态：</view>
+                            <view wx:if="{{filesCheck.originalCheck == 0}}" class="check">等待审核</view>
+                            <view wx:if="{{filesCheck.originalCheck == 1}}" class="check">审核通过</view>
+                            <view wx:if="{{filesCheck.originalCheck == 2}}" class="check">审核不通过</view>
+                        </view>
+                        <view class="contentItem" wx:if="{{filesCheck.originalCheck != 0}}">
+                            <view class="secondTitle">审核意见：</view>
+                            <view wx:if="{{filesCheck.originalOpinion == null}}" class="text">暂无意见</view>
+                            <view wx:else class="text">{{filesCheck.originalOpinion}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view wx:else>暂未提交外文原文</view>
+            </van-collapse-item>
+            <!-- 文献综述 -->
+            <van-collapse-item title="文献综述" name="7">
+                <view wx:if="{{filesCheck.literatureName != null}}" class="Card">
+                    <view class="cardHead flex">
+                        <van-icon name="send-gift" color="#ff9900" size="34rpx" />
+                        <view class="fileName firstFont" bindtap="openLiteratureFile">{{filesCheck.literatureName}}
+                        </view>
+                    </view>
+                    <view class="cardContent secondFont">
+                        <view class="flex contentItem">
+                            <view class="secondTitle">审核状态：</view>
+                            <view wx:if="{{filesCheck.literatureCheck == 0}}" class="check">等待审核</view>
+                            <view wx:if="{{filesCheck.literatureCheck == 1}}" class="check">审核通过</view>
+                            <view wx:if="{{filesCheck.literatureCheck == 1}}" class="check">审核不通过</view>
+                        </view>
+                        <view class="contentItem" wx:if="{{filesCheck.literatureCheck != 0}}">
+                            <view class="secondTitle">审核意见：</view>
+                            <view wx:if="{{filesCheck.literatureOpinion == null}}" class="text">暂无意见</view>
+                            <view wx:else class="text">{{filesCheck.literatureOpinion}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view wx:else class="Card">暂未提交文献综述</view>
+            </van-collapse-item>
+            <!-- 毕业论文 -->
+            <van-collapse-item title="毕业设计论文" name="8">
+                <view wx:if="{{filesCheck.thesisName != null}}" class="Card">
+                    <view class="cardHead flex">
+                        <van-icon name="send-gift" color="#ff9900" size="34rpx" />
+                        <view class="fileName firstFont" bindtap="openThesisPath">{{filesCheck.thesisName}}</view>
+                    </view>
+                    <view class="cardContent secondFont">
+                        <view class="flex contentItem">
+                            <view class="secondTitle">审核状态：</view>
+                            <view wx:if="{{filesCheck.thesisCheck == 0}}" class="check">等待审核</view>
+                            <view wx:if="{{filesCheck.thesisCheck == 1}}" class="check">审核通过</view>
+                            <view wx:if="{{filesCheck.thesisCheck == 2}}" class="check">审核不通过</view>
+                        </view>
+                        <view class="contentItem" wx:if="{{filesCheck.thesisCheck != 0}}">
+                            <view class="secondTitle">审核意见：</view>
+                            <view wx:if="{{filesCheck.thesisOpinion == null}}" class="text">暂无意见</view>
+                            <view wx:else class="text">{{filesCheck.thesisOpinion}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view wx:else>暂未提毕业论文</view>
+            </van-collapse-item>
+        </van-collapse>
+    </view>
+
+</view>

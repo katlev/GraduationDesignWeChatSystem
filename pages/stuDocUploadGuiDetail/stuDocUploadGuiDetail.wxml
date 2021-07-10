@@ -1,0 +1,76 @@
+<!--pages/stuDocUploadGuiDetail/stuDocUploadGuiDetail.wxml-->
+<import src="/template/uploadFile/uploadFile.wxml" />
+<view>
+    <!-- 卡片头部 -->
+    <template is="uploadFile" data="{{perInfo}}" />
+
+    <view class="Card">
+        <view class="cardHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            内容详情
+        </view>
+        <view class="fileContent">
+            <view class="CardFileItem flexItem">
+               <view class="secondTitle">
+                   <van-icon name="hot" color="#1989FA" size="34rpx" />
+                   指导日期：
+               </view>
+                <view>{{guidanceDetail.guidanceDate}}</view>
+            </view>
+            <view class="CardFileItem">
+               <view class="secondTitle">
+                   <van-icon name="hot" color="#1989FA" size="34rpx" />
+                   指导形式：
+               </view>
+                <view class="text">{{guidanceDetail.guidanceForm}}</view>
+            </view>
+            <view class="CardFileItem">
+                <view class="secondTitle">
+                    <van-icon name="hot" color="#1989FA" size="34rpx" />
+                    指导内容：
+                </view>
+                <view class="text">{{guidanceDetail.guidanceValue}}</view>
+            </view>
+            <view class="CardFileItem">
+                <view class="secondTitle">
+                    <van-icon name="hot" color="#1989FA" size="34rpx" />
+                    相关附件：
+                </view>
+                <view wx:if="{{guidanceDetail.guidanceName == null}}" class="text">暂无提交附件</view>
+                <view wx:else class="text check" bindtap="readGuidanceFile">{{guidanceDetail.guidanceName}}</view>
+            </view>
+
+        </view>
+    </view>
+
+    <!--审核状态-->
+    <view class="Card">
+        <view class="cardHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            审核情况
+        </view>
+
+        <view class="fileContent">
+            <view class="CardFileItem flexItem">
+                <view class="secondTitle">
+                    <van-icon name="hot" color="#1989FA" size="34rpx" />
+                    审核状态：
+                </view>
+                <view wx:if="{{guidanceDetail.guidanceCheck == 0}}" class="check">等待审核</view>
+                <view wx:if="{{guidanceDetail.guidanceCheck == 1}}" class="check">审核通过</view>
+                <view wx:if="{{guidanceDetail.guidanceCheck == 2}}" class="check">审核bu通过</view>
+
+            </view>
+            <view class="CardFileItem" wx:if="{{guidanceDetail.guidanceCheck != 0}}">
+                <view class="secondTitle">
+                    <van-icon name="hot" color="#1989FA" size="34rpx" />
+                    审核意见：
+                </view>
+                <view wx:if="guidanceDetail.guidanceOpinion == null" class="text">暂无意见</view>
+                <view wx:else class="text">{{guidanceDetail.guidanceOpinion}}</view>
+
+            </view>
+        </view>
+
+    </view>
+</view>

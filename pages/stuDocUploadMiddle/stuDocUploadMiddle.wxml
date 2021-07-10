@@ -1,0 +1,47 @@
+<!--pages/stuDocUploadMiddle/stuDocUploadMiddle.wxml-->
+<import src="/template/uploadFile/uploadFile.wxml" />
+<view>
+    <!-- 卡片头部 -->
+    <template is="uploadFile" data="{{perInfo}}" />
+    <!-- 文件内容上传 -->
+    <view class="Card">
+        <view class="fileHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            <view class="head">中期检查报告上传</view>
+        </view>
+        <view class="fileContent">
+            <!-- 开题报告 -->
+            <view class="cardFileItem">
+                <view class="secondTitle">中期检查：</view>
+                <view class="footerContent">
+                    <view wx:if="{{middleName == null}}">文件仅支持pdf,doc,docx等格式</view>
+                    <view wx:elif="{{middleName == ''}}">文件仅支持pdf,doc,docx等格式</view>
+                    <view wx:else class="file" bindtap="readMiddleFile">{{middleName}}</view>
+                </view>
+            </view>
+            <button wx:if="{{middleName == null}}" class="uploadBtn" bindtap="uploadMiddleFile">上传</button>
+            <button wx:else hidden="{{middleCheck == 1}}" class="uploadBtn" bindtap="uploadMiddleFile">修改</button>
+        </view>
+    </view>
+    <!-- 审核状态 -->
+    <view class="Card" wx:if="{{middleName != null}}">
+        <view class="cardHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            中期检查报告审核状态
+        </view>
+        <view class="fileContent">
+            <view class=" stateDis stateItem">
+                <view class="secondTitle">审核状态：</view>
+                <view class="check" wx:if="{{middleCheck == 0}}">等待审核</view>
+                <view class="check" wx:if="{{middleCheck == 1}}">审核通过</view>
+                <view class="check" wx:if="{{middleCheck == 2}}">审核不通过</view>
+            </view>
+            <view class="stateItem" wx:if="{{middleCheck != 0}}">
+                <view class="secondTitle">审核意见：</view>
+                <view class="text" wx:if="{{middleOpinion == null}}">暂无意见</view>
+                <view class="text" wx:elif="{{middleOpinion == ''}}">暂无意见</view>
+                <view class="text" wx:else>{{middleOpinion}}</view>
+            </view>
+        </view>
+    </view>
+</view>

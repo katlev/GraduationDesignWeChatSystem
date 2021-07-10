@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "添加指导记录",
+  "usingComponents": {
+    "i-alert":"/static/dist/alert/index",
+    "i-panel":"/static/dist/panel/index"
+  }
+}

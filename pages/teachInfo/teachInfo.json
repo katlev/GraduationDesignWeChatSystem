@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-image":"/static/vant/dist/image/index"
+  },
+  "navigationBarTitleText": "个人中心"
+}

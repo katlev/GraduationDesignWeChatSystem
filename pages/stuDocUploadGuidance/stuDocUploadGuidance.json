@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "指导记录上传",
+  "usingComponents": {
+    "van-icon":"/static/vant/dist/icon/index"
+  }
+}

@@ -1,0 +1,47 @@
+<!--pages/stuDocUploadStart/stuDocUploadStart.wxml-->
+<import src="/template/uploadFile/uploadFile.wxml" />
+<view>
+  <!-- 卡片头部 -->
+  <template is="uploadFile" data="{{perInfo}}" />
+  <!-- 文件内容上传 -->
+  <view class="Card">
+    <view class="fileHead">
+      <van-icon name="star" color="#FFD21E" size="36rpx" />
+      <view class="head">开题报告上传</view>
+    </view>
+    <view class="fileContent">
+      <!-- 开题报告 -->
+      <view class="cardFileItem">
+        <view class="secondTitle">开题报告：</view>
+        <view class="footerContent">
+          <view wx:if="{{startName == null}}">文件仅支持pdf,doc,docx等格式</view>
+          <view wx:elif="{{startName == ''}}">文件仅支持pdf,doc,docx等格式</view>
+          <view wx:else class="file" bindtap="readStartFile">{{startName}}</view>
+        </view>
+      </view>
+      <button wx:if="{{startName == null}}" class="uploadBtn" bindtap="uploadStartFile">上传</button>
+      <button wx:else hidden="{{startCheck == 1}}" class="uploadBtn" bindtap="uploadStartFile">修改</button>
+    </view>
+  </view>
+  <!-- 审核状态 -->
+  <view class="Card" wx:if="{{startName != null}}">
+    <view class="cardHead">
+      <van-icon name="star" color="#FFD21E" size="36rpx" />
+      开题报告审核状态
+    </view>
+    <view class="fileContent">
+      <view class=" stateDis stateItem">
+        <view class="secondTitle">审核状态：</view>
+        <view wx:if="{{startCheck == 0}}" class="check">等待审核</view>
+        <view wx:if="{{startCheck == 1}}" class="check">审核通过</view>
+        <view wx:if="{{startCheck == 2}}" class="check">审核不通过</view>
+      </view>
+      <view class="stateItem" wx:if="{{startCheck != 0}}">
+        <view class="secondTitle">审核意见：</view>
+        <view class="text" wx:if="{{startOpinion == null}}">暂无意见</view>
+        <view class="text" wx:elif="{{startOpinion == ''}}">暂无意见</view>
+        <view class="text" wx:else>{{startOpinion}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,47 @@
+<!--pages/teachManageStuFileGuidanceCheck/teachManageStuFileGuidanceCheck.wxml-->
+<import src="/template/cardTemplate/teachCard.wxml" />
+<import src="/template/cardTemplate/guidanceDetail.wxml"></import>
+<view>
+    <!--学生名片信息-->
+    <template is='teachCard' data="{{stuInfo}}"></template>
+    <!--指导内容-->
+    <template is='guidanceDetail' data="{{guidanceDetail}}"></template>
+
+    <!--审核表单-->
+    <view class="Card" style="z-index: 1">
+        <view class="formHead flex">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            <view class="contentFont " >审核</view>
+        </view>
+
+        <view class="contentFont formContent">
+            <view class="flex contentItem">
+                <view class="flexPosition">审核通过</view>
+                <view wx:if="{{guidanceDetail.guidanceCheck == 0}}" hidden="{{guidanceDetail.guidanceCheck != 0}}">
+                    <van-switch checked="{{ checked }}" size="20px" bind:change="onChange" />
+                </view>
+                <view wx:elif="{{guidanceDetail.guidanceCheck == 1}}">
+                    <van-switch checked="{{true}}" size="20px" disabled />
+                </view>
+                <view wx:elif="{{guidanceDetail.guidanceCheck == 2}}">
+                    <van-switch checked="{{false}}" size="20px" disabled />
+                </view>
+            </view>
+            <van-cell-group>
+                <view class="contentItem" wx:if="{{guidanceDetail.guidanceOpinion != null}}">审核意见：{{guidanceDetail.guidanceOpinion}}</view>
+                <van-field
+                        value="{{ message }}"
+                        type="textarea"
+                        label="审核意见"
+                        placeholder="请输入审核意见"
+                        autosize
+                        bind:change='inputMessage'
+                        wx:else
+                        hidden="{{guidanceDetail.guidanceOpinion != null}}"
+                />
+            </van-cell-group>
+        </view>
+    </view>
+    <!--提交按钮-->
+    <button class="confirm-btn" bindtap="submitGuidanceCheck" hidden="{{guidanceDetail.guidanceCheck != 0}}">提交</button>
+</view>

@@ -1,0 +1,29 @@
+<!--pages/teachManageStuFileGuidance/teachManageStuFileGuidance.wxml-->
+<import src="/template/cardTemplate/teachCard.wxml" />
+<view>
+    <!--学生名片信息-->
+    <template is='teachCard' data="{{stuInfo}}"></template>
+    
+    <!--文件内容-->
+    <view class="Card padding">
+        <view class="fileHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            <view class="head">指导记录</view>
+        </view>
+        <view class="fileContent">
+            <!-- 开题报告 -->
+            <view class="cardFileItem" wx:for="{{guidanceList}}" wx:key="index" bindtap="toGuiCheck" id="{{item.guidanceId}}">
+                <view wx:if="{{item.guidanceDate == null}}">暂无记录</view>
+                <view wx:else class="flex">
+                    <van-icon name="medal" color="#1989FA" size="34rpx" />
+                    <view class="footerContent">
+                        <text>{{item.guidanceDate}}</text>
+                        <text wx:if="{{item.guidanceCheck == 0}}" class="waitCheck" >(待审核)</text>
+                        <text wx:else class="waitCheck" >(已审核)</text>
+                    </view>
+                    <van-icon name="arrow" />
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

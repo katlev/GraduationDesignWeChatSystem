@@ -1,0 +1,2 @@
+/* pages/stuDocUploadGuiForm/stuDocUploadGuiForm.wxss */
+@import '/template/uploadFile/planForm.wxss';

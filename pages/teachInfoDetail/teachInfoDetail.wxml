@@ -1,0 +1,23 @@
+<!--pages/teachInfoDetail/teachInfoDetail.wxml-->
+<view class="perDetContainer">
+   <view class="perItem">
+      <text>姓名</text>
+      <text class="perItemValue">{{perInfo.username}}</text>
+   </view>
+   <view class="perItem">
+      <text>教工号</text>
+      <text class="perItemValue">{{perInfo.usernum}}</text>
+   </view>
+   <view class="perItem">
+      <text>职称</text>
+      <text class="perItemValue">{{perInfo.position}}</text>
+   </view>
+   <view class="perItem">
+      <text>学院</text>
+      <text class="perItemValue">{{perInfo.college}}</text>
+   </view>
+   <view class="perItem">
+      <text>邮箱</text>
+      <text class="perItemValue">{{perInfo.email}}</text>
+   </view>
+</view>

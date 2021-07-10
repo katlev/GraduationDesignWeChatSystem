@@ -1,0 +1,21 @@
+/* pages/teachReview/teachReview.wxss */
+.card{
+  margin: 40rpx;
+  padding: 50rpx;
+  border-radius: 10rpx;
+  color: #ffffff;
+}
+.titleBg{
+  background: url('https://hbimg.huabanimg.com/52ac8663229923b199a58a2abaeab98a4991f8352f8a1-8augfR_fw658/format/webp');
+}
+.taskBg{
+  background-image: url("https://hbimg.huabanimg.com/a4895cab4a16a68aac22734e4ba73908a1e42612d801-0X1xOR_fw658/format/webp");
+}
+.stuBg{
+  background-image: url("https://hbimg.huabanimg.com/52ac8663229923b199a58a2abaeab98a4991f8352f8a1-8augfR_fw658/format/webp");
+}
+.contentTitle{
+  line-height: 100rpx;
+  font-size: 36rpx;
+  margin-left: 20rpx;
+}

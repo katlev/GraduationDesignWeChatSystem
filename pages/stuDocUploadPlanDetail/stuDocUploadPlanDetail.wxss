@@ -1,0 +1,13 @@
+/* pages/stuDocUploadPlanDetail/stuDocUploadPlanDetail.wxss */
+@import '/template/uploadFile/uploadFile.wxss';
+.flexItem{
+    display: flex;
+}
+.CardFileItem{
+    margin: 20rpx 0;
+    border-bottom: 1rpx solid #e9eaec;
+    padding-bottom: 10rpx;
+}
+.secondTitle{
+    color: #495060;
+}

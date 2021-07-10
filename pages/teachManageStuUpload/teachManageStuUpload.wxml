@@ -1,0 +1,33 @@
+<!--pages/teachManageStuUpload/teachManageStuUpload.wxml-->
+<import src="/template/cardTemplate/teachCard.wxml" />
+<view>
+   <!-- 学生名片信息 -->
+   <template is="teachCard" data="{{stuInfo}}"></template>
+   
+  <view class="Card">
+    <view class="cardHead">
+      <view class="flexMiddle">
+        <van-icon name="star" color="#FFD21E" size="36rpx" />
+        上传任务书
+      </view>
+      <button hidden="{{taskCheck == 1}}" class="mini-btn" type="primary" size="mini" bindtap="fileUpload">上传</button>
+    </view>
+    <view class="cardContent">
+      <view class="taskList" >
+          <view>任务书：</view>
+          <view class="taskValue">
+            <view wx:if="{{taskName === null}}">文件仅支持doc、docx、pdf格式</view>
+            <view wx:else class="fileName" bindtap="openFile">
+              {{taskName}}
+            </view>
+          </view>
+      </view>
+      <view class="taskList">
+        <view>审核状态：</view>
+        <view wx:if="{{taskCheck == 0}}" class="check">待审核</view>
+        <view wx:elif="{{taskCheck == 1}}" class="check">审核通过</view>
+        <view wx:elif="{{taskCheck == 2}}" class="check">审核不通过</view>
+      </view>
+    </view>
+  </view>
+</view>

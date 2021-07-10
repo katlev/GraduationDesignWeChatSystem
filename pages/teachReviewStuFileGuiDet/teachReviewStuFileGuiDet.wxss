@@ -1,0 +1,4 @@
+/* pages/teachReviewStuFileGuiDet/teachReviewStuFileGuiDet.wxss */
+@import '/template/cardTemplate/teachCard.wxss';
+@import '/template/cardTemplate/teachPlanAndGuiDetail.wxss';
+@import '/template/cardTemplate/cardTemplate.wxss';

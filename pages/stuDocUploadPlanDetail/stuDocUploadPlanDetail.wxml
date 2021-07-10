@@ -1,0 +1,71 @@
+<!--pages/stuDocUploadPlanDetail/stuDocUploadPlanDetail.wxml-->
+<import src="/template/uploadFile/uploadFile.wxml" />
+<view>
+    <!-- 卡片头部 -->
+    <template is="uploadFile" data="{{perInfo}}" />
+
+    <view class="Card">
+        <view class="cardHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            内容详情
+        </view>
+        <view class="fileContent">
+            <view class="CardFileItem">
+                <view class="secondTitle">
+                    <van-icon name="hot" color="#1989FA" size="34rpx" />
+                    起止日期：
+                </view>
+                <view class="text">{{planDetail.planStart}} - {{planDetail.planEnd}}</view>
+            </view>
+            <view class="CardFileItem">
+                <view class="secondTitle">
+                    <van-icon name="hot" color="#1989FA" size="34rpx" />
+                    计划完成内容：
+                </view>
+                <view class="text">{{planDetail.planValue}}</view>
+            </view>
+            <view class="CardFileItem">
+                <view class="secondTitle">
+                    <van-icon name="hot" color="#1989FA" size="34rpx" />
+                    实际完成内容：
+                </view>
+                <view class="text">{{planDetail.actualValue}}</view>
+            </view>
+            <view class="CardFileItem">
+                <view class="secondTitle">
+                    <van-icon name="hot" color="#1989FA" size="34rpx" />
+                    相关附件：
+                </view>
+                <view wx:if="{{planDetail.planName == null}}" class="text">暂未提交附件</view>
+                <view wx:else class="text file" bindtap="readPlanFile">{{planDetail.planName}}</view>
+            </view>
+        </view>
+    </view>
+
+    <!--审核状态-->
+    <view class="Card">
+        <view class="cardHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            审核情况
+        </view>
+        <view class="fileContent">
+            <view class="CardFileItem flexItem">
+                <view class="secondTitle">
+                    <van-icon name="hot" color="#1989FA" size="34rpx" />
+                    审核状态：
+                </view>
+                <view wx:if="{{planDetail.planCheck == 0}}" class="check">等待审核</view>
+                <view wx:if="{{planDetail.planCheck == 1}}" class="check">审核通过</view>
+                <view wx:if="{{planDetail.planCheck == 2}}" class="check">审核bu通过</view>
+            </view>
+            <view class="CardFileItem" wx:if="{{planDetail.planCheck != 0}}">
+                <view class="secondTitle">
+                    <van-icon name="hot" color="#1989FA" size="34rpx" />
+                    审核意见：
+                </view>
+                <view wx:if="{{planDetail.planOpinion == null}}" class="text">暂无意见</view>
+                <view wx:else class="text">{{planDetail.planOpinion}}</view>
+            </view>
+        </view>
+    </view>
+</view>

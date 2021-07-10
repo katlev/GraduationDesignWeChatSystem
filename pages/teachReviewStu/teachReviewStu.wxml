@@ -1,0 +1,29 @@
+<!--pages/teachReviewStu/teachReviewStu.wxml-->
+<view>
+  <!-- 警告窗 -->
+  <i-alert>请认真查阅学生提交的过程文档，并进行打分！</i-alert>
+
+  <!-- 学生列表 -->
+  <scroll-view
+    scroll-y
+    class="titleScroll"
+    refresher-enabled
+    refresher-triggered="{{isTriggered}}"
+    bindrefresherrefresh="handleRefresher"
+    bindscrolltolower="handleToLower"
+  >
+    <view wx:if="{{stuList.length == 0}}">
+      <van-empty description="暂无数据"></van-empty>
+    </view>
+    <i-panel wx:else title="学生列表">
+      <van-cell wx:for="{{stuList}}" wx:key="index" center link-type="navigateTo" url="/pages/teachReviewStuFile/teachReviewStuFile?userId={{item.userId}}" id="{{item.titleId}}" data-userId="{{item.userId}}" bindtap="toTeachReviewStuFile">
+          <view slot="title" class="flex">
+            <van-image round width="80rpx" height="80rpx" fit="cover" src="{{item.avatar?item.avatar:'/static/images/missing-face.png'}}"></van-image>
+            <view class="content flexMiddle">{{item.usernum}} {{item.username}}</view>
+            <van-icon name="arrow" size="36rpx"/>
+          </view>
+      </van-cell>
+    </i-panel>
+  </scroll-view>
+
+</view>

@@ -1,0 +1,72 @@
+<template name="selectTitleDetail">
+  <view class="detContent">  
+    <view class="detTitle">
+      <i-icon type="accessory" color="#489BF2" size="28" />
+      {{titleDetail.titleName}}
+    </view>
+    <view class="detText">
+      <view class="textItem">
+        <text class="textTitle">题目：</text>
+        <text>{{titleDetail.titleName}}</text>
+      </view>
+      <view class="textItem">
+        <text class="textTitle">可选专业：</text>
+        <text>{{titleDetail.titleMajor}}</text>
+      </view>
+      <view class="textItem">
+        <text class="textTitle">题目类型：</text>
+        <text>{{titleDetail.titleKind}}</text>
+      </view>
+      <view class="textItem">
+        <text class="textTitle">来源：</text>
+        <text>{{titleDetail.titleSource}}</text>
+      </view>
+      <view class="textItem">
+        <text class="textTitle">模式：</text>
+        <text>{{titleDetail.titleModel}}</text>
+      </view>
+      <view class="textItem">
+        <text class="textTitle">题目所属学院：</text>
+        <text>{{titleDetail.college}}</text>
+      </view>
+      <view class="textItem">
+        <text class="textTitle">教师：</text>
+        <text>{{titleDetail.username}}</text>
+      </view>
+      <view class="textItem">
+        <text class="textTitle">教师职称：</text>
+        <text>{{titleDetail.position}}</text>
+      </view>
+      <view class="textItem">
+        <text class="textTitle">导师联系邮箱：</text>
+        <text>{{titleDetail.email}}</text>
+      </view>
+      <view class="textItem">
+        <text class="textTitle">类型：</text>
+        <text>{{titleDetail.titleType}}</text>
+      </view>
+      <view class="textItem">
+        <text class="textTitle">在实践中完成：</text>
+        <text>{{titleDetail.titleComplete}}</text>
+      </view>
+      <view class="textItem">
+        <text class="textTitle">命题内容和要求：</text>
+        <view class="textPart">
+          {{titleDetail.titleValue}}
+        </view>
+      </view>
+      <view class="textItem">
+        <text class="textTitle">所需条件：</text>
+        <text>{{titleDetail.titleRequire}}</text>
+      </view>
+      <view class="textItem">
+        <text class="textTitle">预期成果：</text>
+        <text>{{titleDetail.titleResult}}</text>
+      </view>
+      <view class="textItem">
+        <text class="textTitle">题目审核情况：</text>
+        <text>{{titleDetail.titleState}}</text>
+      </view>
+    </view>
+  </view>
+</template>

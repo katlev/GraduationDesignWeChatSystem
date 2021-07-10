@@ -1,0 +1,16 @@
+<template name="teachCard">
+    <view class="Card">
+        <view class="cardHead">
+            <view class="cardImg">
+                <van-image round fit="cover" width="140rpx" height="140rpx" src="{{stuInfo.avatar?stuInfo.avatar:'/static/images/missing-face.png'}}" />
+            </view>
+            <view class="cardTitle">
+                <view>{{stuInfo.usernum}} {{stuInfo.username}}</view>
+                <view class="titleDes">{{stuInfo.major}}</view>
+            </view>
+        </view>
+        <view class="cardContent">
+            <view>题目：{{stuInfo.titleName}}</view>
+        </view>
+    </view>
+</template>

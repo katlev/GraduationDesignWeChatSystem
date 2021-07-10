@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "题目详情",
+  "usingComponents": {
+    "i-icon":"/static/dist/icon/index",
+    "i-alert": "/static/dist/alert/index"
+  }
+}

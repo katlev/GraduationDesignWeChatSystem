@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "任务书上传",
+  "usingComponents": {
+    "i-card":"/static/dist/card/index",
+    "van-image":"/static/vant/dist/image/index",
+    "van-icon":"/static/vant/dist/icon/index"
+  }
+}

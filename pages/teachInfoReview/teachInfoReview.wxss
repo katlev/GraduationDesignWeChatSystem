@@ -1,0 +1,21 @@
+/* pages/teachInfoReview/teachInfoReview.wxss */
+.deleteBtn{
+  height: 100%;
+  width: 135rpx;
+  background-color: #ED3F14;
+  font-size: 28rpx;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content{
+  margin-left: 20rpx;
+}
+.describleInfo{
+  font-size: 24rpx;
+  color: #bbbec4;
+}
+.titleScroll{
+  height: calc(100vh);
+}

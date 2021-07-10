@@ -1,0 +1,55 @@
+/**app.wxss**/
+@import "/static/iconfont/iconfont.wxss";
+page{
+  width: 100%;
+  background-color: #f8f8f9;
+}
+
+.tab-bar{  
+  position: fixed;  
+  width: 100%;  
+  background-color: #fff;  
+}  
+.menu-item{  
+  width: 25%; 
+  float: left;
+  text-align: center;  
+  padding-top: 16rpx; 
+  font-size: 24rpx; 
+  border-top: 1rpx solid #e6e6e6;
+}  
+.menu-item1{  
+  width: 25%;  
+  float: left;  
+  text-align: center;  
+  padding-top: 16rpx;  
+  font-size: 24rpx;
+  border-top: 1rpx solid #e6e6e6;
+}  
+.img{ 
+  width: 50rpx;  
+  height:50rpx;  
+  display: block;  
+  margin:auto;  
+}  
+.clear{  
+  clear: both;  
+}  
+.flex{
+  display: flex;
+}
+.flexMiddle{
+  flex: 1;
+}
+.alignItem{
+  align-items: center;
+}
+.titleColor{
+  color: #1c2438;
+}
+.check{
+  color: #07C160;
+}
+ 
+
+

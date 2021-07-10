@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "任务书详情",
+  "usingComponents": {
+    "i-panel":"/static/dist/panel/index",
+    "i-alert":"/static/dist/alert/index",
+    "van-cell-group":"/static/vant/dist/cell-group/index",
+    "van-field":"/static/vant/dist/field/index"
+  }
+}

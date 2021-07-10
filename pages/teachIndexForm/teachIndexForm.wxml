@@ -1,0 +1,113 @@
+<!--pages/teachIndexForm/teachIndexForm.wxml-->
+<view>
+
+  <view>
+    <i-alert>
+      开题须知
+      <view slot="desc">
+        毕设题目需有一定的现实意义，旨在考验学生的综合能力，请认真填写。
+        每位教师开题数不超过10个。
+      </view>
+    </i-alert>
+  </view>
+
+  <view>
+    <i-panel title="基本信息">
+      <view class="kindPicker">
+        <view class="kindTitle">题目：</view>
+        <view class="kindContent">
+          <input type="text" placeholder="题目" value="{{titleName}}" id="titleName" bindinput="handleValue" />
+        </view>
+      </view>
+      <!-- 题目类型选择器 -->
+      <picker bindchange="kindPicker" value="{{kindIndex}}" range="{{kindArr}}">
+        <view class="kindPicker">
+          <view class="kindTitle">题目类型：</view>
+          <view wx:if="{{kindValue == ''}}" class="kindContentValue">请选择</view>
+          <view wx:else class="kindContent">{{kindValue}}</view>
+          <view class="iconfont icon-jf-row"></view>
+        </view>
+      </picker>
+      <!-- 题目来源选择器 -->
+      <picker bindchange="sourcePicker" value="sourceIndex" range="{{sourceArr}}">
+        <view class="kindPicker">
+          <view class="kindTitle">来源：</view>
+          <view wx:if="{{sourceValue == ''}}" class="kindContentValue">请选择</view>
+          <view wx:else class="kindContent">{{sourceValue}}</view>
+          <view class="iconfont icon-jf-row"></view>
+        </view>
+      </picker>
+      <!-- 题目选择模式选择器 -->
+      <picker bindchange="statePicker" value="stateIndex" range="{{stateArr}}">
+        <view class="kindPicker">
+          <view class="kindTitle">模式：</view>
+          <view wx:if="{{stateValue == ''}}" class="kindContentValue">请选择</view>
+          <view wx:else class="kindContent">{{stateValue}}</view>
+          <view class="iconfont icon-jf-row"></view>
+        </view>
+      </picker>
+      <!-- 可选专业选择模式选择器 -->
+      <picker mode="multiSelector" bindcolumnchange="majorColumnChange" bindchange="majorPicker" value="{{majorIndex}}" range="{{majorArr}}">
+        <view class="kindPicker">
+          <view class="kindTitle">可选专业：</view>
+          <view wx:if="{{majorValue == ''}}" class="kindContentValue">请选择</view>
+          <view class="kindContent">{{majorValue}}</view>
+          <view class="iconfont icon-jf-row"></view>
+        </view>
+      </picker>
+
+      <!-- 日期选择模式选择器 -->
+      <!-- <picker bindchange="datePicker" mode="date" value="{{date}}" start="2020-01-01" end="2025-12-31">
+        <view class="kindPicker">
+          <view class="kindTitle">日期：</view>
+          <view class="kindContent">{{date}}</view>
+          <view class="iconfont icon-jf-row"></view>
+        </view>
+      </picker> -->
+
+    </i-panel>
+
+    <i-panel title="详细信息">
+      <!-- 类型 -->
+      <picker  bindchange="typePicker" value="typeIndex" range="{{typeArr}}">
+        <view class="kindPicker">
+          <view class="kindTitle">类型：</view>
+          <view wx:if="{{typeValue == ''}}" class="kindContentValue">请选择</view>
+          <view wx:else class="kindContent">{{typeValue}}</view>
+          <view class="iconfont icon-jf-row"></view>
+        </view>
+      </picker>
+      <picker  bindchange="completePicker" value="completeIndex" range="{{completeArr}}">
+        <view class="kindPicker">
+          <view class="kindTitle">实践中完成：</view>
+          <view wx:if="{{completeValue == ''}}" class="kindContentValue">请选择</view>
+          <view wx:else class="kindContent">{{completeValue}}</view>
+          <view class="iconfont icon-jf-row"></view>
+        </view>
+      </picker>
+      <view class="titleTextArea">
+        <view class="textHead">命题内容和要求：</view>
+        <view class="textarea">
+          <textarea name="" id="" rows="10" placeholder="命题内容和要求" id="titleValue" bindinput="handleValue"></textarea>
+        </view>
+      </view>
+      <view class="kindPicker">
+        <view class="kindTitle">所需条件：</view>
+        <view class="kindContent">
+          <input type="text" placeholder="所需条件" id="titleRequire" bindinput="handleValue" />
+        </view>
+      </view>
+
+      <view class="kindPicker">
+        <view class="kindTitle">预期成果：</view>
+        <view class="kindContent">
+          <input type="text" placeholder="预期成果" id="titleResult" bindinput="handleValue" />
+        </view>
+      </view>
+    </i-panel>
+
+    <button class="confirm-btn" bindtap="openTitles">提交</button>
+  </view>
+
+</view>
+

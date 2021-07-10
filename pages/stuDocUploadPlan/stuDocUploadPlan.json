@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "进度计划上传",
+  "usingComponents": {
+    "van-icon":"/static/vant/dist/icon/index"
+  }
+}

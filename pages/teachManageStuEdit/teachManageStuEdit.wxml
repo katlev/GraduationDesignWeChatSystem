@@ -1,0 +1,28 @@
+<!--pages/teachManageStuEdit/teachManageStuEdit.wxml-->
+<import src="/template/cardTemplate/teachCard.wxml" />
+<view>
+     <!-- 学生名片信息 -->
+     <template is="teachCard" data="{{stuInfo}}"></template>
+
+  <!-- 录入指导成绩 -->
+  <view class="Card content">
+    <view class="scoreItem">
+        <view>指导成绩：</view>
+        <input type="text" placeholder="请输入指导分数" class="socreInput" id="guidanceScore" bindinput="handleChange" />
+    </view>
+    <view class="inputGuidance">
+        <view>评语：</view>
+        <textarea class="guidanceValue" placeholder="请对该学生的平时表现进行评价" cols="10" rows="4" id="guidanceValue" bindinput="handleChange"></textarea>
+    </view>
+    <view class="scoreItem">
+      <view>电子签名：</view>
+      <view class="flexMiddle borderBottom">
+        <van-image wx:if="{{imgUrl != ''}}" width="370rpx" height="50rpx " src="{{imgUrl}}" />
+      </view>
+      <button class="mini-btn" fit="cover" type="primary" size="mini" bindtap="signatureBtn">浏览</button>
+    </view>
+  </view>
+
+  <!-- 提交按钮 -->
+  <button class="submitBtn" bindtap="submitScore">提交</button>
+</view>

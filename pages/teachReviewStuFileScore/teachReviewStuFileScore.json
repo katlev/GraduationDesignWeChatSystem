@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "评阅成绩录入界面",
+  "usingComponents": {
+    "van-image":"/static/vant/dist/image/index",
+    "van-uploader":"/static/vant/dist/uploader/index"
+  }
+}

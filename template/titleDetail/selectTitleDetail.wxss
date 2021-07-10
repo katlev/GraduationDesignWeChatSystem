@@ -1,0 +1,25 @@
+.detContent{
+  padding: 20rpx;
+}
+.detTitle{
+   color: #1c2438;
+   margin-bottom:20rpx;
+}
+.detText{
+   color:#495060;
+   font-size: 32rpx;
+   border:1rpx solid #dddee1;
+   border-radius: 10rpx;
+   padding:16rpx;
+   background-color: #fff;
+}
+.textTitle{
+   color:#80848f;
+}
+.textItem{
+   margin-bottom: 20rpx;
+}
+.textPart{
+   text-indent:40rpx;
+   padding-left: 10rpx;
+}

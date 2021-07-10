@@ -1,0 +1,113 @@
+<!--pages/teachReviewTaskDetail/teachReviewTaskDetail.wxml-->
+<view>
+  <view>
+    <i-alert>请认真查看任务书，确认是否通过任务书的审核</i-alert>
+  </view>
+  <view>
+    <i-panel title="题目信息">
+      <van-cell-group>
+        <van-field
+          value="{{taskDetail.titleName}}"
+          label="题目"
+          type="textarea"
+          autosize
+          readonly
+        />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field
+          value="{{taskDetail.titleKind}}"
+          label="题目类型"
+          type="textarea"
+          autosize
+          readonly
+        />
+      </van-cell-group>
+
+      <van-cell-group>
+        <van-field
+          value="{{taskDetail.titleSource}}"
+          label="题目来源"
+          type="textarea"
+          autosize
+          readonly
+        />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field
+          value="{{taskDetail.userName}}"
+          label="开题教师"
+          type="textarea"
+          autosize
+          readonly
+        />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field
+          value="{{taskDetail.position}}"
+          label="教师职称"
+          type="textarea"
+          autosize
+          readonly
+        />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field
+          value="{{taskDetail.titleValue}}"
+          label="命题内容要求"
+          type="textarea"
+          autosize
+          readonly
+        />
+      </van-cell-group>
+    </i-panel>
+    <i-panel title="选题学生信息">
+      <van-cell-group>
+        <van-field
+          value="{{taskDetail.stuNum}} {{taskDetail.stuName}}"
+          label="学生姓名"
+          type="textarea"
+          autosize
+          readonly
+        />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field
+          value="{{taskDetail.major}}"
+          label="专业"
+          type="textarea"
+          autosize
+          readonly
+        />
+      </van-cell-group>
+    </i-panel>
+    <i-panel title="任务书信息">
+      <van-cell-group>
+        <van-field
+          class="file"
+          value="{{taskDetail.taskName}}"
+          label="任务书"
+          type="textarea"
+          autosize
+          readonly
+          bindtap="readTaskFile"
+        />
+      </van-cell-group>
+      <van-cell-group>
+        <van-field
+          class="check"
+          value="{{taskCheck}}"
+          label="审核状态"
+          type="textarea"
+          autosize
+          readonly
+        />
+      </van-cell-group>
+    </i-panel>
+  </view>
+  <!-- 底部按钮 -->
+  <view class="flex">
+    <button class="confirm-btn" bindtap="checkTaskSingle">通过</button>
+    <button class="warn-btn" bindtap="returnTaskSingle">回退</button>
+  </view>
+</view>

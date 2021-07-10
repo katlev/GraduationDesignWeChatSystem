@@ -1,0 +1,47 @@
+<!--pages/stuDocUploadOriginal/stuDocUploadOriginal.wxml-->
+<import src="/template/uploadFile/uploadFile.wxml" />
+<view>
+    <!-- 卡片头部 -->
+    <template is="uploadFile" data="{{perInfo}}" />
+    <!-- 文件内容上传 -->
+    <view class="Card">
+        <view class="fileHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            <view class="head">外文原文报告上传</view>
+        </view>
+        <view class="fileContent">
+            <!-- 开题报告 -->
+            <view class="cardFileItem">
+                <view class="secondTitle">外文原文：</view>
+                <view class="footerContent">
+                    <view wx:if="{{originalName == null}}">文件仅支持pdf,doc,docx等格式</view>
+                    <view wx:elif="{{originalName == ''}}">文件仅支持pdf,doc,docx等格式</view>
+                    <view wx:else class="file" bindtap="readOriginalFile">{{originalName}}</view>
+                </view>
+            </view>
+            <button wx:if="{{originalName == null}}" class="uploadBtn" bindtap="uploadOriginalFile">上传</button>
+            <button wx:else hidden="{{originalCheck == 1}}" class="uploadBtn" bindtap="uploadOriginalFile">修改</button>
+        </view>
+    </view>
+    <!-- 审核状态 -->
+    <view class="Card" wx:if="{{originalName != null}}">
+        <view class="cardHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            外文原文报告审核状态
+        </view>
+        <view class="fileContent">
+            <view class=" stateDis stateItem">
+                <view class="secondTitle">审核状态：</view>
+                <view wx:if="{{originalCheck == 0}}" class="check">等待审核</view>
+                <view class="check" wx:if="{{originalCheck == 1}}">审核通过</view>
+                <view class="check" wx:if="{{originalCheck == 2}}">审核不通过</view>
+            </view>
+            <view class="stateItem" wx:if="{{originalCheck != 0}}">
+                <view class="secondTitle">审核意见：</view>
+                <view class="text" wx:if="{{originalOpinion == null}}">暂无意见</view>
+                <view class="text" wx:elif="{{originalOpinion == ''}}">暂无意见</view>
+                <view class="text" wx:else>{{originalOpinion}}</view>
+            </view>
+        </view>
+    </view>
+</view>

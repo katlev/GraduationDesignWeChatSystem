@@ -1,0 +1,47 @@
+<!--pages/stuDocUploadThesis/stuDocUploadThesis.wxml-->
+<import src="/template/uploadFile/uploadFile.wxml" />
+<view>
+    <!-- 卡片头部 -->
+    <template is="uploadFile" data="{{perInfo}}" />
+    <!-- 文件内容上传 -->
+    <view class="Card">
+        <view class="fileHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            <view class="head">毕业论文报告上传</view>
+        </view>
+        <view class="fileContent">
+            <!-- 开题报告 -->
+            <view class="cardFileItem">
+                <view class="secondTitle">毕业论文：</view>
+                <view class="footerContent">
+                    <view wx:if="{{thesisName == null}}">文件仅支持pdf,doc,docx等格式</view>
+                    <view wx:elif="{{thesisName == ''}}">文件仅支持pdf,doc,docx等格式</view>
+                    <view wx:else class="file" bindtap="readThesisFile">{{thesisName}}</view>
+                </view>
+            </view>
+            <button wx:if="{{thesisName == null}}" class="uploadBtn" bindtap="uploadThesisFile">上传</button>
+            <button wx:else hidden="{{thesisCheck == 1}}" class="uploadBtn" bindtap="uploadThesisFile">修改</button>
+        </view>
+    </view>
+    <!-- 审核状态 -->
+    <view class="Card" wx:if="{{thesisName != null}}">
+        <view class="cardHead">
+            <van-icon name="star" color="#FFD21E" size="36rpx" />
+            毕业论文报告审核状态
+        </view>
+        <view class="fileContent">
+            <view class=" stateDis stateItem">
+                <view class="secondTitle">审核状态：</view>
+                <view wx:if="{{thesisCheck == 0}}" class="check">等待审核</view>
+                <view wx:if="{{thesisCheck == 1}}" class="check">审核通过</view>
+                <view wx:if="{{thesisCheck == 2}}" class="check">审核不通过</view>
+            </view>
+            <view class="stateItem" wx:if="{{thesisCheck != 0}}">
+                <view class="secondTitle">审核意见：</view>
+                <view wx:if="{{thesisOpinion == null}}" class="text">暂无意见</view>
+                <view wx:elif="{{thesisOpinion == ''}}" class="text">暂无意见</view>
+                <view wx:else class="text">{{thesisOpinion}}</view>
+            </view>
+        </view>
+    </view>
+</view>

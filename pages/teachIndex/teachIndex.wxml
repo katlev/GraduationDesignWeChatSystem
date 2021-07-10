@@ -1,0 +1,49 @@
+<!--pages/teachIndex/teachIndex.wxml-->
+<import src="/template/tabTemplate/tabTemplate.wxml"/>
+<view>
+  <view class="titleHead">
+    <text>我的题目</text>
+    <button class="mini-btn" type="primary" size="mini" bindtap="toTitleForm">开题</button>
+  </view>
+
+  <scroll-view 
+    scroll-y
+    class="titleScroll"
+    refresher-enabled
+    refresher-triggered="{{isTriggered}}"
+    bindrefresherrefresh="handleRefresher"
+    bindscrolltolower="handleToLower"
+  >
+    <!-- 暂无数据 -->
+    <view wx:if="{{titleList.length === 0}}">
+      <van-empty description="开题列表空空如也" />
+    </view>
+    <!-- 开题列表 -->
+    <view wx:else style="margin-bottom:105rpx">
+      <view class="i-swipeout-demo" wx:for="{{titleList}}" wx:key="index">
+        <i-swipeout i-class="i-swipeout-demo-item" operateWidth="{{80}}">
+          <view slot="content" bindtap="toTitleDetail" id="{{item.titleId}}">
+            <view class="i-swipeout-des">
+              <view class="i-swipeout-des-h2">
+                {{item.titleName}}
+              </view>
+              <view class="icon">
+                  <text class="iconfont icon-jf-row enter"></text>
+              </view> 
+            </view>
+            <view class="desState">
+              <view>审核状态：</view>
+              <view class="state">{{item.titleState}}</view>
+            </view>
+          </view>
+          <view slot="button" class="i-swipeout-demo-button-group">
+            <view class="i-swipeout-demo-button" id="{{item.titleId}}" bindtap="slideButtonTap" >删除</view>
+          </view>
+        </i-swipeout>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>
+
+<template is="tabBar" data="{{tabBar}}" />

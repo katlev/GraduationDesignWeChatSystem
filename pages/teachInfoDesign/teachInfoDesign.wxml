@@ -1,0 +1,59 @@
+<!--pages/teachInfoDesign/teachInfoDesign.wxml-->
+
+<view>
+  <view class="content">
+        <view wx:if="{{listContent.length === 0}}">
+            <van-empty description="暂无数据" />
+        </view>
+        <view class="caption-wrap" wx:else>
+            <van-collapse value="{{activeNames}}"  bind:change="onChange" accordion>
+                <van-collapse-item wx:for="{{listContent}}" wx:key="index" title="{{item.defenceName}}" name="{{index}}">
+                    <view class="Card">
+                          <view class="title flex bottomPad">
+                            <van-icon name="star" color="#FFD21E" size="32rpx" />
+                            <view class="flexMiddle titleColor">答辩信息</view>
+                            <button wx:if="{{item.defenceLeader == username}}" id="{{item.defenceId}}" class="mini-btn" type="primary" size="mini" bindtap="toInputScore">分数</button>
+                          </view>
+
+                          <view class="topPad">
+                            <view class="flex bottomPad">
+                              
+                              <view class="secondTitle">答辩场次：</view>
+                              <view class="flexMiddle">{{item.defenceName}}</view>
+                            </view>
+
+                            <view class="flex bottomPad">
+                             
+                              <view class="secondTitle">答辩地点：</view>
+                              <view class="flexMiddle">{{item.defencePlace}}</view>
+                            </view>
+
+                            <view class="flex bottomPad">
+                             
+                              <view class="secondTitle">答辩时间：</view>
+                              <view class="flexMiddle">{{item.defenceDate}}  {{item.defenceTime}}</view>
+                            </view>
+
+                            <view class="flex bottomPad">
+                              
+                              <view class="secondTitle">答辩组组长：</view>
+                              <view class="flexMiddle">{{item.defenceLeader}}</view>
+                            </view>
+
+                            <view class="flex bottomPad">
+                              
+                              <view class="secondTitle">参辩教师：</view>
+                              <view class="flexMiddle">{{item.defenceTeachs}}</view>
+                            </view>
+
+                            <view class="flex bottomPad">
+                              <view class="secondTitle">参辩学生：</view>
+                              <view class="flexMiddle">{{item.defenceStudents}}</view>
+                            </view>
+                          </view>
+                    </view>
+                </van-collapse-item>
+            </van-collapse>
+        </view>
+  </view>
+</view>
